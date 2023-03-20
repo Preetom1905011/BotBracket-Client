@@ -1,0 +1,17 @@
+.card-transition-appear{
+    transition: transform 350ms ease-in;
+    transform: translateX(-100%);
+}
+
+.card-transition-appear-active{
+    transform: translateX(0);
+}
+
+.matchScene-transition-appear {
+    transition: transform 350ms ease-in;
+    transform: translateX(100%);
+}
+
+.matchScene-transition-appear-active {
+    transform: translateX(0);
+}

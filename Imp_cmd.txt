@@ -1,0 +1,7 @@
+# mongodb start
+-> brew services restart mongodb/brew/mongodb-community
+or 
+-> brew services start mongodb-community@6.0
+
+# mongodb stop
+-> brew services stop mongodb-community@6.0

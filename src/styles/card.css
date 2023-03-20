@@ -1,0 +1,313 @@
+.card-body {
+  max-width: 28rem;
+  height: 80rem;
+  align-self: left;
+  box-shadow: 5px 0px 5px #00375e;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+}
+.card-body h2 {
+  color: #161616;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.side-grid-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.button-style {
+  width: 5.2rem;
+  height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: rgb(56, 183, 225);
+  box-shadow: inset 0 2px 4px lightgray, 2px 2px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.button-style:hover {
+  background-color: rgb(38, 115, 215);
+  border: 0.01px solid lightslategrey;
+  transform: translateX(0.25rem);
+}
+
+.bot-input {
+  width: 20rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 rgb(56, 183, 225);
+}
+
+.num-input {
+  width: 8rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 rgb(56, 183, 225);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item {
+  width: 23.5rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(56, 183, 225);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.list-item:hover {
+  background-color: paleturquoise;
+  color: #161616;
+  border: 1px solid lightslategrey;
+  transform: translateX(0.5rem);
+}
+
+.roster-list-item-selected {
+  color: black;
+  background-color: paleturquoise;
+  border: 1px solid lightslategrey;
+  box-shadow: inset 0 2px 4px rgb(211, 211, 211), 5px 5px 2px #59cef1;
+  transform: translateX(0.5rem);
+}
+.roster-list-item-selected:hover {
+  color: black;
+  border: 1px solid lightslategrey;
+  background-color: paleturquoise;
+  transform: translateX(0.5rem);
+}
+
+.button-del-ed {
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  margin-left: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: lightcyan;
+}
+.button-del-ed:hover {
+  color: slateblue;
+}
+
+.button-sv {
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-top: 0.15rem;
+  margin-left: 0.75rem;
+  margin-bottom: 0.15rem;
+  align-items: center;
+  color: rgb(203, 237, 249);
+}
+.button-sv:hover {
+  color: slateblue;
+}
+
+.edit-form {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text-edit-input {
+  width: 14rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1.25rem;
+  display: flex;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+
+.num-edit-input {
+  width: 4rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  display: flex;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+
+.navbar {
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0.25rem;
+  background-color: #00375e;
+}
+.navbar h1 {
+  flex: 1.5;
+  font-weight: bolder;
+  font-size: 2.4rem;
+  color: white;
+}
+.navbar h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+.navbar h1 a:hover {
+  text-shadow: 2px 2px 2px rgb(173, 169, 169);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex: 0.75;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.navbar ul a {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.navbar ul a:hover {
+  text-shadow: 2px 2px 2px rgb(173, 169, 169);
+}
+.navbar img {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin-left: 2rem;
+  margin-right: 0.75rem;
+  margin-bottom: 0.5%;
+}
+.navbar i {
+  display: none;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  color: white;
+  background-color: #00375e;
+  padding: 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-box {
+  width: 12rem;
+  height: 2.5rem;
+  border: 0.25rem;
+  border-radius: 1rem;
+  padding: 0.35rem 1rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.check-button {
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-left: 0.75rem;
+  align-items: center;
+  color: green;
+}
+.check-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.cancel-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.75rem;
+  align-items: center;
+  color: #00375e;
+}
+.cancel-button:hover {
+  background-color: #00375e;
+  color: white;
+}
+
+.scroll-box {
+  height: 94%;
+  margin-bottom: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.footer {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: bottom;
+  justify-content: center;
+  text-align: center;
+  background-color: #fe5d65;
+  color: white;
+}
+.footer h5 {
+  font-size: 1.5rem;
+}
+.footer p {
+  color: #141414;
+}/*# sourceMappingURL=card.css.map */

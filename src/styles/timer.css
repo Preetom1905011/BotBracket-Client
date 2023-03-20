@@ -1,0 +1,33 @@
+.timer {
+  width: 10.1rem;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.timer-input {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 0.1rem;
+  border: 1px solid rgb(210, 208, 208);
+  text-align: center;
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+  font-family: "Nova Square", sans-serif;
+  font-size: 1.6rem;
+  padding: 0.9rem;
+  box-shadow: inset 0 2px 6px lightgray, 0 1px 0 rgba(88, 25, 235, 0.2);
+}
+
+.timer-bt {
+  width: 4.9rem;
+  border-radius: 0.1rem;
+  border: none;
+  background-color: white;
+  margin-right: 0.1rem;
+  box-shadow: inset 0px 1px 1px #E31C25, 0px 1px 1px #0d47b3;
+  font-weight: bolder;
+}
+.timer-bt:hover {
+  background-color: rgba(240, 209, 255, 0.286);
+  box-shadow: 1px 1px 1px 1px rgb(107, 6, 249);
+}/*# sourceMappingURL=timer.css.map */

@@ -1,0 +1,291 @@
+.TM-card-body {
+  box-shadow: 5px 0px 5px rgb(96, 223, 98);
+}
+
+.TM-scroll-box {
+  height: 86%;
+  margin-bottom: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.TM-edit-form {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.tournament-edit-input {
+  width: 35rem;
+  background-color: rgb(241, 235, 235);
+  border: none;
+  border-radius: 0.5rem;
+  margin-right: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  padding: 0.25rem 0.75rem;
+  text-align: center;
+  font-size: 2.2rem;
+  color: rgb(0, 0, 0);
+}
+
+.TM-sv {
+  width: 3rem;
+  height: 3rem;
+  color: rgb(167, 249, 168);
+}
+.TM-sv:hover {
+  color: green;
+}
+
+.TM-edit {
+  color: rgb(167, 249, 168);
+  width: 2rem;
+  height: 2rem;
+}
+.TM-edit:hover {
+  color: green;
+}
+
+.add-TM-bt {
+  width: 25rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.75rem;
+}
+.add-TM-bt:hover {
+  box-shadow: 2px 2px 2px lawngreen;
+  color: green;
+}
+
+.add-TM-form {
+  width: 25rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.add-TM-input {
+  width: 25rem;
+  height: 3rem;
+}
+.add-TM-input input {
+  width: 15rem;
+  height: 2.9rem;
+  border: 0.1rem solid lightgreen;
+  border-radius: 0.25rem;
+  padding: 1rem 1rem;
+}
+.add-TM-input button {
+  width: 4.9rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 1px lawngreen;
+  margin-left: 0.05rem;
+}
+.add-TM-input button:hover {
+  box-shadow: 2px 2px 2px lawngreen;
+  color: green;
+}
+
+.TM-list-item {
+  width: 23.5rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: #7590a6;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.TM-list-item:hover {
+  background-color: #00375e;
+  box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+  border: 1px solid white;
+  transform: translateX(0.5rem);
+}
+
+.TM-list-item-selected {
+  color: white;
+  background-color: #00375e;
+  box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  transform: translateX(0.5rem);
+}
+
+.TM-scene {
+  width: 65vw;
+  min-height: 75rem;
+  border: 1px solid rgb(210, 208, 208);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px rgb(96, 223, 98);
+  background-color: white;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+.TM-scene h2 {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.TM-header {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.TM-details {
+  height: 95%;
+}
+.TM-details h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.TM-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.TM-leaderboard {
+  padding: 0.75rem 0.1rem;
+  background-color: rgb(167, 249, 168);
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.TM-matchHist {
+  padding: 0.75rem 0.1rem;
+  background-color: rgb(167, 249, 168);
+  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.TM-hist-list {
+  width: 97%;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+.TM-scene-bottom {
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TM-popup {
+  width: auto;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  color: rgb(246, 53, 53);
+  text-shadow: 0 0 2px #d7d0d0, 0 0 2px #555454;
+  background-color: rgb(185, 178, 178);
+}
+
+.TM-check-cancel {
+  width: 4rem;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.TM-del-bt {
+  width: 15rem;
+  height: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(231, 220, 220);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 1px red;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+.TM-del-bt:disabled {
+  background-color: rgb(212, 208, 208);
+  box-shadow: none;
+  color: rgb(162, 157, 157);
+}
+.TM-del-bt:disabled:hover {
+  background-color: rgb(212, 208, 208);
+  box-shadow: none;
+  color: rgb(162, 157, 157);
+  text-shadow: none;
+}
+.TM-del-bt:hover {
+  background-color: red;
+  text-shadow: 2px 2px 2px rgb(224, 201, 201);
+  box-shadow: 3px 3px 3px rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.TM-leader-list {
+  width: 95%;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.TM-leader-list:nth-of-type(odd) {
+  background-color: #00375e;
+}
+.TM-leader-list:nth-of-type(even) {
+  background-color: #8a2be2;
+}
+
+.TMList-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(-100%);
+}
+
+.TMList-transition-appear-active {
+  transform: translateX(0);
+}
+
+.TMScene-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(100%);
+}
+
+.TMScene-transition-appear-active {
+  transform: translateX(0);
+}/*# sourceMappingURL=tournament.css.map */
