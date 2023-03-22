@@ -3,8 +3,9 @@
 $main-color:#00375e;
 $list-color2:#8a2be2;
 $border-color: rgb(210, 208, 208);
-$lose-color: #e13941;
-$win-color: rgb(96, 223, 98);
+$lose-color: rgb(158, 42, 0);
+// $win-color: rgb(161, 162, 124);
+$win-color: rgb(88, 128, 8);
 $TM-list-color: rgb(16, 180, 27);
 $match-list-font: rgb(9, 89, 9);
 
@@ -396,6 +397,6 @@ $match-list-font: rgb(9, 89, 9);
 
 .list-each-win{
     background-color: $win-color;
-    // color: whitesmoke;
-    color: $match-list-font;
+    color: white;
+    // color: $match-list-font;
 }

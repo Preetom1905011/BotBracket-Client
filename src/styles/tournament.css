@@ -1,5 +1,5 @@
 .TM-card-body {
-  box-shadow: 5px 0px 5px rgb(96, 223, 98);
+  box-shadow: 5px 0px 5px #00375e;
 }
 
 .TM-scroll-box {
@@ -33,14 +33,14 @@
 .TM-sv {
   width: 3rem;
   height: 3rem;
-  color: rgb(167, 249, 168);
+  color: rgb(195, 232, 255);
 }
 .TM-sv:hover {
   color: green;
 }
 
 .TM-edit {
-  color: rgb(167, 249, 168);
+  color: rgb(195, 232, 255);
   width: 2rem;
   height: 2rem;
 }
@@ -55,8 +55,8 @@
   border-radius: 0.75rem;
 }
 .add-TM-bt:hover {
-  box-shadow: 2px 2px 2px lawngreen;
-  color: green;
+  box-shadow: 2px 2px 2px navy;
+  color: navy;
 }
 
 .add-TM-form {
@@ -105,13 +105,13 @@
   list-style-type: none;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
-  background-color: #7590a6;
+  background-color: dodgerblue;
   color: white;
   border-radius: 0.5rem;
   box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 .TM-list-item:hover {
-  background-color: #00375e;
+  background-color: rgb(15, 15, 169);
   box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
   color: white;
   border: 1px solid white;
@@ -120,7 +120,7 @@
 
 .TM-list-item-selected {
   color: white;
-  background-color: #00375e;
+  background-color: rgb(15, 15, 169);
   box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
   border: 1px solid white;
   transform: translateX(0.5rem);
@@ -131,7 +131,7 @@
   min-height: 75rem;
   border: 1px solid rgb(210, 208, 208);
   border-radius: 1rem;
-  box-shadow: 5px 5px 5px rgb(96, 223, 98);
+  box-shadow: 5px 5px 5px #00375e;
   background-color: white;
   margin-top: 2.5rem;
   margin-bottom: 2rem;
@@ -168,7 +168,7 @@
 
 .TM-leaderboard {
   padding: 0.75rem 0.1rem;
-  background-color: rgb(167, 249, 168);
+  background-color: rgb(195, 232, 255);
   margin-left: 2rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
@@ -176,7 +176,7 @@
 
 .TM-matchHist {
   padding: 0.75rem 0.1rem;
-  background-color: rgb(167, 249, 168);
+  background-color: rgb(195, 232, 255);
   margin-left: 1rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
@@ -266,10 +266,10 @@
   box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 .TM-leader-list:nth-of-type(odd) {
-  background-color: #00375e;
+  background-color: rgb(15, 15, 169);
 }
 .TM-leader-list:nth-of-type(even) {
-  background-color: #8a2be2;
+  background-color: rgb(127, 63, 255);
 }
 
 .TMList-transition-appear {
