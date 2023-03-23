@@ -60,7 +60,7 @@ $roster-shadow: #9638ee;
     border-radius: 0.75rem;
     &:hover{
         box-shadow: 2px 2px 2px $roster-shadow;
-        color: rgb(17, 113, 144);
+        color: $roster-shadow;
     }
 }
 .label-roster {

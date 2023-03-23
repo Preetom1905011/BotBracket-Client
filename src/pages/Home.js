@@ -1,14 +1,20 @@
 import React from 'react';
 import home_img from '../media/home_img3.png';
 import scrappy_sticker from '../media/scrappy-sticker.png';
-import ccr_img1 from '../media/ccr_img1.jpg';
+import ccr_img1 from '../media/crr_img1.jpg';
 import ccr_img2 from '../media/staccato.png';
-import ccr_img3 from '../media/ccr_img3.JPG';
+import ccr_img3 from '../media/crr_img3.JPG';
+import ccr_img4 from '../media/crr_img4.png';
+import ccr_img5 from '../media/crr_img5.JPG';
 import '../styles/home.css';
 import { CSSTransition } from 'react-transition-group';
 import { Link} from 'react-router-dom'
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Home() {
+
+  const {user} = useAuthContext()
+
   return (
     <div className='homepage'>
 
@@ -16,7 +22,7 @@ export default function Home() {
         <div>
           <h2>Robot Battles</h2>
           <h3>Have never been easier</h3>
-          <Link to='/login'><button >Get Started</button></Link>
+          <Link to={!user? '/login': '/tournaments'}><button >Get Started</button></Link>
         </div>
         <img src={home_img}/>
       </div>
@@ -52,9 +58,13 @@ export default function Home() {
           </h4>
         </div>
         <div className='img-box'>
-          <img src={ccr_img1} className="img-left-shift"/>
           <div className='container'>
             <img src={ccr_img2} className="img-right-shift"/>
+            <img src={ccr_img4} className="img-right-shift img3-height"/>
+          </div>
+          <img src={ccr_img1} className="img-left-shift"/>
+          <div className='container'>
+            <img src={ccr_img5} className="img-right-shift"/>
             <img src={ccr_img3} className="img-right-shift img3-height"/>
           </div>
         </div>

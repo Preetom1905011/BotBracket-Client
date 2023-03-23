@@ -105,6 +105,7 @@ $nav-color: #e13941;
     h3{
         font-size: 1.6rem !important;
         line-height: 2.7rem;
+        text-align:justify;
     }
 }
 
@@ -133,17 +134,22 @@ $nav-color: #e13941;
         width: 55vw;
         margin-left: 3rem;
         h2{
+            margin-top: 2rem;
             margin-bottom: 4rem;
             font-size: 3rem;
             text-align: center;
+            
+        }
+        h4{
+            font-size: 1.4rem !important;
+            line-height: 2.7rem;
+            margin-bottom: 2rem;
+            margin-right: 1rem;
+            text-align:justify;
         }
     }
     h3{
         font-size: 1.6rem !important;
-        line-height: 2.7rem;
-    }
-    h4{
-        font-size: 1.4rem !important;
         line-height: 2.7rem;
     }
 }
@@ -158,6 +164,8 @@ $nav-color: #e13941;
 .img-right-shift {
     width: 20vw;
     height: 35vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-right: 1vw;
     margin-left: auto;
     animation: up-down 1.5s linear alternate-reverse infinite;
@@ -165,7 +173,6 @@ $nav-color: #e13941;
 .img3-height{
     height: 35vh;
 }
-
 
 
 .footer-home{
