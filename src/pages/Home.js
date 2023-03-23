@@ -1,6 +1,9 @@
 import React from 'react';
 import home_img from '../media/home_img3.png';
 import scrappy_sticker from '../media/scrappy-sticker.png';
+import ccr_img1 from '../media/ccr_img1.jpg';
+import ccr_img2 from '../media/staccato.png';
+import ccr_img3 from '../media/ccr_img3.JPG';
 import '../styles/home.css';
 import { CSSTransition } from 'react-transition-group';
 import { Link} from 'react-router-dom'
@@ -32,8 +35,33 @@ export default function Home() {
           </h3>
         </div>
       </div>
+
+      <div className='club-details'>
+        <div className='club-text'>
+          <h2>Who are Combat Ready Robotics?</h2>
+          <h4> Combat Ready Robotics at ASU is open to any and all ASU students and focuses on building interest and excitement 
+              for robotics through the medium of robot combat. Members design and construct real combat robots at one of several 
+              weight classes depending on prior experience. Beginners will have the opportunity to learn the fundamentals of robot 
+              design and build 3lb “beetleweight” robots in small teams. More advanced members can work on the 30lb “featherweight” 
+              robots, with the goal of translating successful design concepts into a single 250lb “heavyweight” bot to try and 
+              compete in next year’s “BattleBots” TV show.
+              <br/><br/>
+              We also host Sun Devil Smackdown, a 3lb combat robotics tournament catered to ASU students. In the weeks leading up to each 
+              competition, we host a series of workshops to teach groups of students how to build 3lb robots while funding their designs, 
+              culminating in a tournament bracket.
+          </h4>
+        </div>
+        <div className='img-box'>
+          <img src={ccr_img1} className="img-left-shift"/>
+          <div className='container'>
+            <img src={ccr_img2} className="img-right-shift"/>
+            <img src={ccr_img3} className="img-right-shift img3-height"/>
+          </div>
+        </div>
+      </div>
       
       <div className="footer-home">
+          <p> Preetom Biswas &copy; 2023</p>
           <p>Combat Ready Robotics @ ASU</p>
       </div>
     </div>

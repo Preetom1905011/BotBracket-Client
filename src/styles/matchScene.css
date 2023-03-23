@@ -226,15 +226,15 @@
   width: 85%;
   height: 2rem;
   align-self: center;
-  color: rgb(244, 72, 9);
+  color: #E31C25;
   background-color: #ffffff;
   border: 1px solid rgb(210, 208, 208);
   border-radius: 0.5rem;
-  box-shadow: 3px 3px 3px rgb(249, 93, 37);
+  box-shadow: 3px 3px 3px #E31C25;
 }
 .end-match-bt:hover {
   transform: translateY(-0.25rem) translateX(-0.25rem);
-  box-shadow: 6px 6px 6px rgb(249, 93, 37);
+  box-shadow: 6px 6px 6px #E31C25;
 }
 .end-match-bt:disabled {
   color: rgb(210, 208, 208);

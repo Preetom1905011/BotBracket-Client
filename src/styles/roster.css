@@ -10,13 +10,14 @@
   border: 1px solid rgb(210, 208, 208);
   border-radius: 1rem;
   background-color: white;
-  box-shadow: 5px 5px 5px rgb(56, 183, 225);
+  box-shadow: 5px 5px 5px #9638ee;
 }
 
 .roster-header {
   width: 100%;
   height: 5rem;
-  background-color: lightblue;
+  background-color: #8e52c7;
+  color: white;
   border: none;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -28,7 +29,7 @@
 }
 
 .rosterlist-body {
-  box-shadow: 5px 0px 5px rgb(56, 183, 225);
+  box-shadow: 5px 0px 5px #9638ee;
 }
 
 .form-container {
@@ -46,7 +47,7 @@
   border-radius: 0.75rem;
 }
 .allow-roster-bt:hover {
-  box-shadow: 2px 2px 2px rgb(56, 183, 225);
+  box-shadow: 2px 2px 2px #9638ee;
   color: rgb(17, 113, 144);
 }
 
@@ -64,7 +65,7 @@
 }
 
 .form-body {
-  background-color: rgb(174, 221, 253);
+  background-color: #e1c0ff;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -86,7 +87,7 @@
   width: 15rem;
   border: none;
   border-radius: 0.25rem;
-  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 rgb(56, 183, 225);
+  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 #9638ee;
   padding: 0.25rem 0.75rem;
 }
 
@@ -139,7 +140,7 @@
   margin-right: 1rem;
   border: none;
   border-radius: 0.25rem;
-  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 rgb(56, 183, 225);
+  box-shadow: inset 0 5px 7px lightgray, 0 1px 0 #9638ee;
   padding: 0.25rem 0.75rem;
 }
 

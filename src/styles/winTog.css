@@ -29,19 +29,19 @@
 }
 
 .switch-candy input:checked + .blue {
-  color: #0d47b3;
+  color: #8a2be2;
   background-color: white;
   border-radius: 0.5rem;
-  box-shadow: 2.5px 2.5px 2.5px 2px #0d47b3;
-  outline: #0d47b3;
+  box-shadow: 2.5px 2.5px 2.5px 2px #8a2be2;
+  outline: #8a2be2;
 }
 
 .switch-candy input:checked + .red {
-  color: #E31C25;
+  color: #00375e;
   background-color: white;
   border-radius: 0.5rem;
-  box-shadow: 2.5px 2.5px 2.5px 2px #E31C25;
-  outline: #E31C25;
+  box-shadow: 2.5px 2.5px 2.5px 2px #00375e;
+  outline: #00375e;
 }
 
 .switch-candy input:checked + .disabled {

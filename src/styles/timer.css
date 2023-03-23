@@ -24,7 +24,7 @@
   border: none;
   background-color: white;
   margin-right: 0.1rem;
-  box-shadow: inset 0px 1px 1px #E31C25, 0px 1px 1px #0d47b3;
+  box-shadow: inset 0px 1px 1px #00375e, 0px 1px 1px #8a2be2;
   font-weight: bolder;
 }
 .timer-bt:hover {

@@ -2,9 +2,10 @@
 // $list-color2:#0d47b3;
 $main-color:#00375e;
 $list-color2:#8a2be2;
+$bot1-color: rgb(15, 15, 169);
+$bot2-color: rgb(127, 63, 255);
 $border-color: rgb(210, 208, 208);
 $lose-color: rgb(158, 42, 0);
-// $win-color: rgb(161, 162, 124);
 $win-color: rgb(88, 128, 8);
 $TM-list-color: rgb(16, 180, 27);
 $match-list-font: rgb(9, 89, 9);
@@ -16,14 +17,11 @@ $match-list-font: rgb(9, 89, 9);
     justify-content: space-around;
 }
 
-
 .side-grid {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     grid-template-columns: 1.5fr 1.5fr;
-    // background-color: red;
-    // align-self: center;
 }
 
 .backdrop {
@@ -299,14 +297,14 @@ $match-list-font: rgb(9, 89, 9);
     width: 85%;
     height: 2rem;
     align-self: center;
-    color: rgb(244, 72, 9);
+    color: #E31C25;;
     background-color: #ffffff;
     border: 1px solid $border-color;
     border-radius: 0.5rem;
-    box-shadow: 3px 3px 3px rgb(249, 93, 37);
+    box-shadow: 3px 3px 3px #E31C25;;
     &:hover{
         transform: translateY(-0.25rem) translateX(-0.25rem);
-        box-shadow: 6px 6px 6px rgb(249, 93, 37);
+        box-shadow: 6px 6px 6px #E31C25;;
     }
     &:disabled{
         color: $border-color;

@@ -65,7 +65,7 @@ export default function MatchScene({sortedNames}) {
 
       console.log("match", matches);
       // update winner
-      const response1 = await fetch('http://localhost:4000/api/participants/'+winner._id, {
+      const response1 = await fetch(process.env.REACT_APP_URL+'/api/participants/'+winner._id, {
         method: 'PATCH',
         body: JSON.stringify({chip: winner.chip + Number(loserName.bet)}),
         headers: {
@@ -78,7 +78,7 @@ export default function MatchScene({sortedNames}) {
         dispatch({type: 'UPDATE_BOT', payload: json1})
       }
       // update loser
-      const response2 = await fetch('http://localhost:4000/api/participants/'+loser._id, {
+      const response2 = await fetch(process.env.REACT_APP_URL+'/api/participants/'+loser._id, {
         method: 'PATCH',
         body: JSON.stringify({chip: loser.chip - Number(loserName.bet)}),
         headers: {
@@ -92,7 +92,7 @@ export default function MatchScene({sortedNames}) {
       }
 
       // add match to DB
-      const response3 = await fetch('http://localhost:4000/api/matches', {
+      const response3 = await fetch(process.env.REACT_APP_URL+'/api/matches', {
         method: 'POST',
         body: JSON.stringify(newMatch),
         headers: {
@@ -110,7 +110,7 @@ export default function MatchScene({sortedNames}) {
         console.log("New Match Added")
         matchDispatch({type: "ADD_MATCH", payload: json3})
         // add match to the TM DB
-        const response4 = await fetch('http://localhost:4000/api/tournaments/matches/'+selectedTourney._id, {
+        const response4 = await fetch(process.env.REACT_APP_URL+'/api/tournaments/matches/'+selectedTourney._id, {
           method: 'POST',
           body: JSON.stringify(json3),
           headers: {
@@ -138,7 +138,7 @@ export default function MatchScene({sortedNames}) {
         return
       }
       if (selectedTourney._id !== "Default"){
-        const response = await fetch('http://localhost:4000/api/tournaments/matches/'+selectedTourney._id, {
+        const response = await fetch(process.env.REACT_APP_URL+'/api/tournaments/matches/'+selectedTourney._id, {
           headers: {
             'Authorization': `Bearer ${user.token}`
           }

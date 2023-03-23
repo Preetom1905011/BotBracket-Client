@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../styles/card.css";
-import logo from "../media/scrappyhead_sticker.png";
+import logo from "../media/scrappyhead_sticker_purple2.png";
 
 
 export default function Navbar() {

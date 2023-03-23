@@ -75,8 +75,9 @@ export default function Roster() {
         </CSSTransition>
       </div>
 
-      <div className="footer">
-        <p>Combat Ready Robotics @ ASU</p>
+      <div className="footer-home">
+          <p> Preetom Biswas &copy; 2023</p>
+          <p>Combat Ready Robotics @ ASU</p>
       </div>
     </div>
   );

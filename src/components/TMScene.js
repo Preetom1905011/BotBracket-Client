@@ -235,7 +235,7 @@ export default function TMScene() {
                 "No Tournament Selected"
               ) : (
                 <>
-                  {selectedTourney.name}
+                  {selectedTourney.name} Scoreboard
                   <PencilSquare
                     className="button-del-ed TM-edit"
                     onClick={() => handleEdit(selectedTourney)}

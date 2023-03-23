@@ -45,7 +45,7 @@
   height: 2rem;
 }
 .TM-edit:hover {
-  color: green;
+  color: #7f3fff;
 }
 
 .add-TM-bt {
@@ -105,24 +105,22 @@
   list-style-type: none;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
-  background-color: dodgerblue;
-  color: white;
+  background-color: rgb(182, 169, 255);
+  color: #00375e;
   border-radius: 0.5rem;
   box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 .TM-list-item:hover {
-  background-color: rgb(15, 15, 169);
+  background-color: #00375e;
   box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
   color: white;
-  border: 1px solid white;
   transform: translateX(0.5rem);
 }
 
 .TM-list-item-selected {
   color: white;
-  background-color: rgb(15, 15, 169);
+  background-color: #00375e;
   box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
   transform: translateX(0.5rem);
 }
 
@@ -266,10 +264,10 @@
   box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 .TM-leader-list:nth-of-type(odd) {
-  background-color: rgb(15, 15, 169);
+  background-color: #0f0fa9;
 }
 .TM-leader-list:nth-of-type(even) {
-  background-color: rgb(127, 63, 255);
+  background-color: #7f3fff;
 }
 
 .TMList-transition-appear {
