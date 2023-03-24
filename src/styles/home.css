@@ -92,6 +92,8 @@
 .club-details .img-box {
   display: flex;
   flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .club-details .club-text {
   width: 55vw;

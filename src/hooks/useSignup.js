@@ -51,6 +51,7 @@ export const useSignup = () => {
       selectDispatch({type: 'UPDATE_TM', payload: {_id: "Default", TMID: "Default"}})
 
       setIsLoading(false);
+      setError(null);
     }
   };
 
