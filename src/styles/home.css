@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #0873f6;
 }
 
 .main {
@@ -115,16 +116,16 @@
 }
 
 .img-left-shift {
-  width: 30vw;
-  height: 40vh;
-  margin-right: 7vw;
+  width: 22vw;
+  height: 30vh;
+  margin-right: 6vw;
   margin-left: auto;
   animation: up-down 1.5s linear alternate-reverse infinite;
 }
 
 .img-right-shift {
-  width: 20vw;
-  height: 35vh;
+  width: 15vw;
+  height: 25vh;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 1vw;
@@ -133,7 +134,7 @@
 }
 
 .img3-height {
-  height: 35vh;
+  height: 25vh;
 }
 
 .footer-home {

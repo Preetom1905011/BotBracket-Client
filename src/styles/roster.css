@@ -61,11 +61,11 @@
   text-align: center;
   font-size: 1.4rem;
   padding: 0.5rem;
-  background-color: rgba(114, 217, 251, 0.63);
+  background-color: #ebd6ff;
 }
 
 .form-body {
-  background-color: #e1c0ff;
+  background-color: #ebd6ff;
   height: 100%;
   display: flex;
   flex-direction: column;

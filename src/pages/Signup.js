@@ -3,6 +3,7 @@ import "../styles/login.css";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
+import { RiseLoader} from "react-spinners";
 
 export default function Signup() {
   const [userName, setUserName] = useState("");
@@ -32,7 +33,7 @@ export default function Signup() {
           <div className="login signup pad-2">
             <h2>Welcome To BotBracket</h2>
             <form className="col-container pad-2" onSubmit={handleSignup}>
-              <label className="left-align">Name</label>
+              <label className="left-align">User Name</label>
               <input
                 type="userName"
                 value={userName}
@@ -70,6 +71,11 @@ export default function Signup() {
               {error && <div className="signup-error">{error}</div>}
               {mismatch && <div className="signup-error">{mismatch}</div>}
             </form>
+
+            {isLoading && <RiseLoader
+                        color={"#0873f6"}
+                        loading={isLoading}
+                        size={10}/>}
           </div>
         </CSSTransition>
       </div>

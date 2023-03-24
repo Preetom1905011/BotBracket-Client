@@ -3,6 +3,7 @@ import "../styles/login.css";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import { useLogin } from "../hooks/useLogin";
+import { RiseLoader} from "react-spinners";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -46,6 +47,11 @@ export default function Login() {
                 <Link to="/signup">Sign up</Link>
               </div>
             </form>
+
+            {isLoading && <RiseLoader
+                        color={"#0873f6"}
+                        loading={isLoading}
+                        size={10}/>}
           </div>
         </CSSTransition>
       </div>
