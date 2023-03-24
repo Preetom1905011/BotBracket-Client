@@ -20,8 +20,8 @@ export default function Home() {
 
       <div className='main background-style-all'>
         <div>
-          <h2>Robot Battles</h2>
-          <h3>Have never been easier</h3>
+          <h2>Combat Robots</h2>
+          <h3>Tournaments made easier</h3>
           <Link to={!user? '/login': '/tournaments'}><button >Get Started</button></Link>
         </div>
         <img src={home_img}/>
