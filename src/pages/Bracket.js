@@ -5,6 +5,7 @@ import "../styles/base.css";
 import "../styles/card.css";
 import "../styles/bracket.css";
 import { CSSTransition } from "react-transition-group";
+import Footer from '../components/Footer';
 
 export default function Bracket() {
   // const [input, setInput] = useState({botname: "", chipnum: "3"});
@@ -33,11 +34,7 @@ export default function Bracket() {
           <MatchScene sortedNames={sortedNames}></MatchScene>
         </CSSTransition>
       </div>
-
-      <div className="footer-home">
-          <p> Preetom Biswas &copy; 2023</p>
-          <p>Combat Ready Robotics @ ASU</p>
-      </div>
+      <Footer/>
     </div>
   );
 }

@@ -292,22 +292,4 @@
   margin-bottom: none;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
-.footer {
-  width: 100%;
-  height: 7rem;
-  display: flex;
-  flex-direction: column;
-  align-items: bottom;
-  justify-content: center;
-  text-align: center;
-  background-color: #fe5d65;
-  color: white;
-}
-.footer h5 {
-  font-size: 1.5rem;
-}
-.footer p {
-  color: #141414;
 }/*# sourceMappingURL=card.css.map */

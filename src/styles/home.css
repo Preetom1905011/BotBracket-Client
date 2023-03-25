@@ -150,11 +150,38 @@
   background-color: #ca91ff;
   color: white;
 }
-.footer-home h5 {
-  font-size: 1.5rem;
+.footer-home h7 {
+  font-size: 1rem;
+  color: #141414;
 }
 .footer-home p {
+  font-size: 1rem;
   color: #141414;
+}
+
+.social-box {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.icon-each {
+  transform: scale(0.9);
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #141414;
+}
+.icon-each:hover {
+  color: rgb(61, 4, 216);
+}
+
+.icon-each-me {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 5px;
 }
 
 @keyframes up-down {

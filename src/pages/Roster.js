@@ -7,6 +7,7 @@ import "../styles/base.css";
 import "../styles/card.css";
 import "../styles/roster.css";
 import { CSSTransition } from "react-transition-group";
+import Footer from '../components/Footer';
 
 export default function Roster() {
   const [input, setInput] = useState({});
@@ -74,11 +75,7 @@ export default function Roster() {
           />
         </CSSTransition>
       </div>
-
-      <div className="footer-home">
-          <p> Preetom Biswas &copy; 2023</p>
-          <p>Combat Ready Robotics @ ASU</p>
-      </div>
+      <Footer/>
     </div>
   );
 }

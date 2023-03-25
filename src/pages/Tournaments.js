@@ -10,6 +10,7 @@ import { useTMContext } from "../hooks/useTMContext";
 import { useMatchesContext } from "../hooks/useMatchContext";
 import { CSSTransition } from "react-transition-group";
 import TMScene from "../components/TMScene";
+import Footer from '../components/Footer';
 import "../styles/tournament.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -109,11 +110,7 @@ export default function Tournaments() {
           <TMScene />
         </CSSTransition>
       </div>
-
-      <div className="footer-home">
-          <p> Preetom Biswas &copy; 2023</p>
-          <p>Combat Ready Robotics @ ASU</p>
-      </div>
+      <Footer/>
     </div>
   );
 }

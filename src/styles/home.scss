@@ -192,12 +192,40 @@ $nav-color: #e13941;
 
     background-color: #ca91ff;
     color: white;
-    h5{
-        font-size: 1.5rem;
-    }
-    p{
+    h7{
+        font-size: 1rem;
         color: #141414;
     }
+    p{
+        font-size: 1rem;
+        color: #141414;
+    }
+}
+
+.social-box {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.icon-each {
+    transform: scale(0.9);
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    // background-color: red;
+    color: #141414;
+    &:hover {
+        color: rgb(61, 4, 216);
+    }
+}
+
+.icon-each-me {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 5px;
 }
 
 // Animation

@@ -10,6 +10,7 @@ import '../styles/home.css';
 import { CSSTransition } from 'react-transition-group';
 import { Link} from 'react-router-dom'
 import { useAuthContext } from "../hooks/useAuthContext";
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -70,10 +71,7 @@ export default function Home() {
         </div>
       </div>
       
-      <div className="footer-home">
-          <p> Preetom Biswas &copy; 2023</p>
-          <p>Combat Ready Robotics @ ASU</p>
-      </div>
+      <Footer/>
     </div>
   )
 }
