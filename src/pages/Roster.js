@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RosterCard from "../components/RosterCard";
 import RosterList from "../components/RosterList";
-import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import "../styles/base.css";
 import "../styles/card.css";
 import "../styles/roster.css";
@@ -12,25 +12,32 @@ import Footer from '../components/Footer';
 export default function Roster() {
   const [input, setInput] = useState({});
   const [sortedNames, setSortedNames] = useState([]);
-  const { names, dispatch } = useBotsContext();
+  const [error, setError] = useState(null);
 
   const [allowAddBot, setAllowAddBot] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [selectedBot, setSelectedBot] = useState(null);
   const { selectedTourney } = useSelectedTMContext();
+  const {user} = useAuthContext();
 
   const handleAllowAdd = (e) => {
-    console.log(selectedTourney);
+
+    if (!user) {
+      setError('You must be logged in')
+      return
+    }
+
     if (selectedTourney._id !== "Default"){
       
       setAllowAddBot(!allowAddBot);
       setShowForm(!showForm);
       setInput({});
       setSelectedBot(null);
+      setError(null);
     
     }
     else{
-      alert("Select a Tournament First");
+      setError("Select a Tournament First");
     }
   };
 
@@ -53,6 +60,7 @@ export default function Roster() {
             handleAllowAdd={handleAllowAdd}
             setInput={setInput}
             setShowForm={setShowForm}
+            error={error}
           ></RosterList>
         </CSSTransition>
 
@@ -72,6 +80,7 @@ export default function Roster() {
             setInput={setInput}
             selectedBot={selectedBot}
             setSelectedBot={setSelectedBot}
+            setError={setError}
           />
         </CSSTransition>
       </div>

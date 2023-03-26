@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import "../styles/card.css";
 import "../styles/roster.css";
 import BotList from "./BotList";
-import { useBotsContext } from "../hooks/useBotContext";
-import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 
 export default function RosterList({
   allowAddBot,
@@ -15,12 +12,9 @@ export default function RosterList({
   selectedBot,
   setSelectedBot,
   setInput,
-  setShowForm
+  setShowForm,
+  error
 }) {
-  // const [error, setError] = useState(null);
-  const { names, dispatch } = useBotsContext();
-  const { selectedTourney } = useSelectedTMContext();
-
   return (
     <>
       <div className="card-body rosterlist-body">
@@ -33,6 +27,8 @@ export default function RosterList({
           <div className="label-roster">Fill out the form
           </div>
         )}
+
+        {error && <div className="login-error">{error}</div>}
         <BotList
           sortedNames={sortedNames}
           setSortedNames={setSortedNames}

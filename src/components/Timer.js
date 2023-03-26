@@ -5,15 +5,11 @@ export default function Timer(props) {
     const {toggleState, setToggleState, timerState, setTimerState, reset, outRed, outBlue} = props;
 
     const [time, setTime] = useState({minutes: "00", seconds: "00"});
-    // const [minutes, setMinutes] = useState(0);
-    // const [seconds, setSeconds] = useState(0);
     const [counter, setCounter] = useState(0);
 
     useEffect(() => {
         if (counter >= 0 && timerState === "start") {
             setTimeout(() => setCounter(counter-1), 1000);
-            // setMinutes(Math.floor(counter / 60));
-            // setSeconds(Math.floor(counter % 60));
             setTime({minutes: Math.floor(counter / 60).toString().padStart(2, '0'), seconds: Math.floor(counter % 60).toString().padStart(2, '0')});
         }
         else {
@@ -46,8 +42,6 @@ export default function Timer(props) {
         setTimerState("reset");
         setCounter(0);
         setToggleState("na");
-        // setMinutes(0);
-        // setSeconds(0);
         setTime({minutes: "00", seconds: "00"});
 
     }

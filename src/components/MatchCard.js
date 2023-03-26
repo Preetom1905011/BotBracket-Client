@@ -15,7 +15,6 @@ export default function MatchCard(props) {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [fighterId, setFighterId] = useState("");
   const [bet, setBet] = useState(1);
-  // const alert = useAlert()
 
   useEffect(() => {
       setAllowPlus(true);
@@ -37,7 +36,6 @@ export default function MatchCard(props) {
       setFightersDuo(fightersDuo.filter((id) => id !== fighterId));
     }
     setIsConfirmed(false);
-    // console.log(names);
   }  
   const handleConfirm = (event) => {
     event.preventDefault();
@@ -61,7 +59,6 @@ export default function MatchCard(props) {
           setOutcome({...bot, bet: bet, result:""});
         }
         setFightersDuo([...fightersDuo, bot._id]);
-        console.log("duo", fightersDuo)
       }
     }
   }

@@ -107,7 +107,7 @@
 }
 
 .login-error {
-  padding: 0.1rem;
+  padding: 0.1rem 1.5rem;
   color: red;
   font-size: 1rem;
 }

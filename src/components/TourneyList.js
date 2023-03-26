@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/card.css'
 import '../styles/tournament.css'
 import {useSelectedTMContext} from '../hooks/useSelectedTMContext';
@@ -12,8 +12,6 @@ const TourneyList = () => {
   const {allTournaments, dispatch: allTMDispatch} = useTMContext()
 
   const handleLoadTourney = async (TM) => {
-    console.log(TM);
-    // setSelectedTourney(name);
     // select this TM
     selectDispatch({type: "UPDATE_TM", payload: TM})
   }
@@ -29,9 +27,7 @@ const TourneyList = () => {
       const json = await response.json()
 
       if (response.ok){
-        console.log("-->", json)
         allTMDispatch({type: 'SET_TMS', payload: json})
-        // selectDispatch({type: "UPDATE_TM", payload: json[0]})
       }
       else{
         console.log("failed")

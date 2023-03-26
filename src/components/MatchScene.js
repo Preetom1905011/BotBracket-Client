@@ -29,7 +29,6 @@ export default function MatchScene({sortedNames}) {
 
   // call PATCH request here to update botlist
   const handleEndMatch = async (e) => {
-    console.log(toggleState);
     setReset(!reset);
 
     if (!user) {
@@ -40,7 +39,6 @@ export default function MatchScene({sortedNames}) {
     let loserName = {_id:""};
     let newMatch = null;
 
-    console.log("outRed", outRed);
     try{
       const redName = (names.find(name => name._id === outRed._id)).title;
       const blueName = (names.find(name => name._id === outBlue._id)).title;
@@ -49,21 +47,18 @@ export default function MatchScene({sortedNames}) {
         winnerName = outRed;
         loserName = outBlue;
 
-        // setMatches([...matches, {"red": redName, "redScore": '+'+loserName.bet, "blue": blueName, "blueScore": '-'+loserName.bet}]);
         newMatch = {"red": redName, "redScore": '+'+loserName.bet, "blue": blueName, "blueScore": '-'+loserName.bet}
       }
       else if (outRed.result === "loser" && outBlue.result === "winner"){
         winnerName = outBlue;
         loserName = outRed;
 
-        // setMatches([...matches, {"red": redName, "redScore": '-'+loserName.bet, "blue": blueName, "blueScore": '+'+loserName.bet}]);
         newMatch = {"red": redName, "redScore": '-'+loserName.bet, "blue": blueName, "blueScore": '+'+loserName.bet}
       }
       
       const winner = names.find((name) => name._id === winnerName._id)
       const loser = names.find((name) => name._id === loserName._id)
 
-      console.log("match", matches);
       // update winner
       const response1 = await fetch(process.env.REACT_APP_URL+'/api/participants/'+winner._id, {
         method: 'PATCH',
@@ -106,8 +101,6 @@ export default function MatchScene({sortedNames}) {
         alert(json3.error)
       }
       else {
-        // setError(null);
-        console.log("New Match Added")
         matchDispatch({type: "ADD_MATCH", payload: json3})
         // add match to the TM DB
         const response4 = await fetch(process.env.REACT_APP_URL+'/api/tournaments/matches/'+selectedTourney._id, {
@@ -127,7 +120,6 @@ export default function MatchScene({sortedNames}) {
     } catch(error) {
       console.log("No Bot selected")
     }
-
   }
 
 
@@ -146,9 +138,6 @@ export default function MatchScene({sortedNames}) {
         const json = await response.json()
 
         if (response.ok){
-          console.log("-->", json)
-          console.log("SET MATCH", json)
-          // setNames(data)
           matchDispatch({type: 'SET_MATCHES', payload: json})
         }
         else{

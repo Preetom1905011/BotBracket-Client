@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/login.css";
 import { CSSTransition } from "react-transition-group";
-import { Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
 import { RiseLoader} from "react-spinners";
 
@@ -17,7 +16,6 @@ export default function Signup() {
     e.preventDefault();
 
     if (inPass === password) {
-      console.log(userName, email, password);
       await signup(userName, email, password);
       // set mismatch to null
       setMismatch(null);

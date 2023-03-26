@@ -3,9 +3,8 @@ import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { useTMContext } from "../hooks/useTMContext";
 import { useMatchesContext } from "../hooks/useMatchContext";
-import { Trash, PencilSquare, Save } from "react-bootstrap-icons";
+import { PencilSquare, Save } from "react-bootstrap-icons";
 import "../styles/tournament.css";
-import { XSquare, Check2Square } from "react-bootstrap-icons";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function TMScene() {
@@ -55,14 +54,12 @@ export default function TMScene() {
       }
     );
     const json = await response.json();
-    console.log("updating", json);
 
     if (response.ok) {
       allTMDispatch({ type: "EDIT_TM", payload: json });
     }
 
     setEditing({ allowEdit: true, id: null });
-    // setAllTournaments(edited);
 
     // update SelectedTourney Too - NO - just the dispatch part
     selectDispatch({ type: "UPDATE_TM", payload: json });
@@ -77,7 +74,6 @@ export default function TMScene() {
 
   useEffect(() => {
     const fetchTMparts = async () => {
-      console.log("process:", process.env)
 
       if (!user) {
         return
@@ -94,14 +90,11 @@ export default function TMScene() {
         const json2 = await response2.json();
 
         if (response2.ok) {
-          console.log("-->", json2);
           const data = json2.map(
             (bot) => (bot = { _id: bot._id, title: bot.title, chip: bot.chip })
           );
-          console.log("SET DATA", data);
           // setNames(data)
           dispatch({ type: "SET_BOTS", payload: data });
-          console.log(names);
         } else {
           console.log("failed");
         }
@@ -116,8 +109,6 @@ export default function TMScene() {
         const json3 = await response3.json();
 
         if (response3.ok) {
-          console.log("-->", json3);
-          console.log("SET MATCH", json3);
           // setNames(data)
           matchDispatch({ type: "SET_MATCHES", payload: json3 });
         } else {
@@ -153,7 +144,6 @@ export default function TMScene() {
         }
       );
       const json = await response.json();
-      console.log("delete TM", json);
 
       // update the TM list
       allTMDispatch({ type: "DELETE_TM", payload: json });
@@ -263,11 +253,11 @@ export default function TMScene() {
           <div className="TM-matchHist">
             {matches.map((match) => (
               <li className="match-hist-list TM-hist-list" key={match._id}>
-                <div className={Number(match.redScore) < 0? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div className={Number(match.redScore) < 0 || match.redScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
                   <span>{match.red}</span>
                   {match.redScore}
                 </div>
-                <div className={Number(match.blueScore) < 0? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div className={Number(match.blueScore) < 0 || match.blueScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
                   <span>{match.blueScore}</span>
                   <span>{match.blue}</span>
                 </div>

@@ -40,7 +40,6 @@ $nav-color: #e13941;
         transform: translateX(100vw);
         letter-spacing: 2px;
 
-        // color: $list-color2;
         color: #8a2be2;
     }
     img{
@@ -56,7 +55,6 @@ $nav-color: #e13941;
         margin-left: 8vw;
         animation: right 1s 1.5s ease-in forwards;
 
-        // background-color: rgb(3, 158, 158);
         background-color: #4fc1f9;
         color: white;
         border: none;
@@ -70,19 +68,9 @@ $nav-color: #e13941;
     }
 }
 
-// .home-transition-appear{
-//     transition: transform 350ms ease-in;
-//     transform: translateY(100%);
-// }
-// .home-transition-appear-active{
-//     transform: translateY(0);
-// }
-
 .intro{
     min-height: 100vh;
-    // background-color: #fb9ca1cb;
     background-color: #e0cee6;
-    // color: #00375e;
     color: #5f0bae;
 
     display: flex;
@@ -114,7 +102,6 @@ $nav-color: #e13941;
 
 .club-details{
     min-height: 100vh;
-    // background-color: #fb9ca1cb;
     background-color: #E0E0EB;
     color: #00375e;
 
@@ -128,12 +115,6 @@ $nav-color: #e13941;
         margin-top: auto;
         margin-bottom: auto;
     }
-    // img{
-    //     width: 10vw;
-    //     margin-right: 2vw;
-    //     margin-left: auto;
-    //     animation: up-down 1.5s linear alternate-reverse infinite;
-    // }
     .club-text{
         width: 55vw;
         margin-left: 3rem;
@@ -188,8 +169,6 @@ $nav-color: #e13941;
     justify-content: center;
     text-align: center;
 
-    // margin-top: 4.5rem;
-
     background-color: #ca91ff;
     color: white;
     h7{
@@ -214,7 +193,6 @@ $nav-color: #e13941;
     margin-bottom: 1px;
     margin-left: 10px;
     margin-right: 10px;
-    // background-color: red;
     color: #141414;
     &:hover {
         color: rgb(61, 4, 216);

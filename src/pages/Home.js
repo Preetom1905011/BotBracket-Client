@@ -7,7 +7,6 @@ import ccr_img3 from '../media/crr_img3.JPG';
 import ccr_img4 from '../media/crr_img4.png';
 import ccr_img5 from '../media/crr_img5.JPG';
 import '../styles/home.css';
-import { CSSTransition } from 'react-transition-group';
 import { Link} from 'react-router-dom'
 import { useAuthContext } from "../hooks/useAuthContext";
 import Footer from '../components/Footer';

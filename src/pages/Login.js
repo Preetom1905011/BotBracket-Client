@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/login.css";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";

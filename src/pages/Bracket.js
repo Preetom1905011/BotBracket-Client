@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "../components/Card";
 import MatchScene from "../components/MatchScene";
 import "../styles/base.css";
@@ -8,7 +8,6 @@ import { CSSTransition } from "react-transition-group";
 import Footer from '../components/Footer';
 
 export default function Bracket() {
-  // const [input, setInput] = useState({botname: "", chipnum: "3"});
   const [input, setInput] = useState({});
   const [sortedNames, setSortedNames] = useState([]);
 

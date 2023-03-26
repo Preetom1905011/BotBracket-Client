@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import { UserContext } from "../App";
-import { useContext } from "react";
+import React, { useState } from "react";
 import TourneyList from "../components/TourneyList";
 import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
@@ -16,9 +12,9 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Tournaments() {
   const { dispatch: botDispatch } = useBotsContext();
-  const { selectedTourney, dispatch: selectDispatch } = useSelectedTMContext();
-  const { allTournaments, dispatch: allTMDispatch } = useTMContext();
-  const { matches, dispatch: matchDispatch } = useMatchesContext();
+  const { dispatch: selectDispatch } = useSelectedTMContext();
+  const { dispatch: allTMDispatch } = useTMContext();
+  const { dispatch: matchDispatch } = useMatchesContext();
   const [allowAddTM, setAllowAddTM] = useState(true);
   const [inputTourney, setInputTourney] = useState("");
   const [error, setError] = useState(null);
@@ -42,13 +38,10 @@ export default function Tournaments() {
       },
     });
     const json = await response.json();
-    console.log("Adding", json)
     if (!response.ok) {
       setError(json.error)
     } else {
-      console.log("New Tournament Added");
       setInputTourney({ name: "", _id: "" });
-      // const data = json.map((bot)=> bot = {_id: bot._id, name: bot.name, chip: bot.chip})
       botDispatch({ type: "SET_BOTS", payload: newTourney.participantIDs });
       allTMDispatch({
         type: "ADD_TM",

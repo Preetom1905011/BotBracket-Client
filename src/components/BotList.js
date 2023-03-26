@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Trash, PencilSquare, Save } from "react-bootstrap-icons";
-import Popup from "./Popup";
+import React, { useEffect} from "react";
 import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import "../styles/roster.css";
@@ -23,8 +21,6 @@ const BotList = ({
 
   // selects the clicked bot
   const handleSelectBot = (name) => {
-    console.log(name);
-    console.log(sortedNames);
     setSelectedBot(name);
     if (!allowAddBot){
       setAllowAddBot(true);
@@ -54,14 +50,11 @@ const BotList = ({
         const json = await response.json();
 
         if (response.ok) {
-          console.log("-->", json);
           const data = json.map(
             (bot) => (bot = { _id: bot._id, title: bot.title, chip: bot.chip, teamname: bot.teamname, weightclass: bot.weightclass, signature: bot.signature })
           );
-          console.log("SET DATA", data);
           // setNames(data)
           dispatch({ type: "SET_BOTS", payload: data });
-          console.log(names);
           setSortedNames(names);
         } else {
           console.log("failed");

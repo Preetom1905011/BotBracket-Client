@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Trash, PencilSquare, Save } from "react-bootstrap-icons";
-import Popup from "./Popup";
+import React, { useState } from "react";
+import { PencilSquare, Save } from "react-bootstrap-icons";
 import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import "../styles/roster.css";
@@ -26,7 +25,7 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
   const handleEdit = ({ _id }) => {
     setEditing({ allowEdit: true, id: _id });
     const editedName = names.find((name) => name._id === _id);
-    console.log("up", _id, editedName, names);
+    
     setNewName({
       title: editedName.title,
       chip: editedName.chip,
@@ -50,7 +49,6 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
       }
     );
     const json = await response.json();
-    console.log("updating", json);
 
     if (response.ok) {
       dispatch({ type: "UPDATE_BOT", payload: json });
@@ -64,7 +62,6 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
       weightclass: json.weightclass,
       signature: json.signature,
     });
-    console.log(names);
   };
 
   // This will show the Cofirmation Box
@@ -85,8 +82,6 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
     // reset the selected bot
     setSelectedBot(null);
     if (popup.show && popup.id) {
-      // let filteredNames = names.filter((name) => name.id !== popup.id);
-      // setNames(filteredNames);
 
       const response = await fetch(
         process.env.REACT_APP_URL+"/api/participants/" + popup.id,

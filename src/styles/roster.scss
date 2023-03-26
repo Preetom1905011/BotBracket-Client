@@ -1,5 +1,4 @@
 $border-color: rgb(210, 208, 208);
-// $roster-shadow: rgb(56, 183, 225);
 $roster-shadow: #9638ee;
 
 .roster-bg {
@@ -25,7 +24,7 @@ $roster-shadow: #9638ee;
 .roster-header {
     width: 100%;
     height: 5rem;
-    // background-color: lightblue;
+    
     background-color: #8e52c7;
     color: white;
     border: none;
@@ -39,12 +38,10 @@ $roster-shadow: #9638ee;
 }
 
 .rosterlist-body{
-    // background: rgb(166, 222, 241);
     box-shadow: 5px 0px 5px $roster-shadow;
 }
 
 .form-container {
-    // background-color: aqua;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -77,18 +74,14 @@ $roster-shadow: #9638ee;
     font-size: 1.4rem;
     padding: 0.5rem;
 
-    // background-color: rgba(114, 217, 251, 0.63);
     background-color: #ebd6ff;
 }
 .form-body {
-    // background-color: aquamarine;
-    // background-color: rgb(174, 221, 253);
     background-color: #ebd6ff;
     height:100%;
 
     display: flex;
     flex-direction: column;
-    // justify-content: center;
 
     h3{
         text-align: center;
@@ -155,8 +148,6 @@ $roster-shadow: #9638ee;
 }
 
 .sign-field{
-    // add the inspector's sign input
-
     label{
         margin-left: 1rem;
         margin-right: 1rem;

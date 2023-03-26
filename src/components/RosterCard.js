@@ -15,17 +15,15 @@ export default function RosterCard({
   setInput,
   selectedBot,
   setSelectedBot,
+  setError
 }) {
-  // const [error, setError] = useState(null);
   const { names, dispatch } = useBotsContext();
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext();
 
   const [inputWeight, setInputWeight] = useState("3lb");
-  const [error, setError] = useState(null);
 
   const onInputChange = (event) => {
-    // setInput(event.target.value);
     setInput((prevState) => ({
       ...prevState,
       [event.target.name]: event.target.value,
@@ -37,19 +35,14 @@ export default function RosterCard({
   const onFormSubmit = async (event) => {
     // add to the DB
     event.preventDefault();
-    handleAllowAdd();
 
-    if (!user) {
-      setError('You must be logged in')
-      return
-    }
+    handleAllowAdd();
+    setError(null);
 
     // incorporate the teamname, signature (and inputWeight separately) here
     // change the botSchema
     const { botname, chipnum, teamname, signature } = input;
     const newName = { title: botname, chip: chipnum, teamname: teamname, weightclass: inputWeight, signature: signature };
-    console.log(newName);
-    console.log("input", input);
 
     // add to bots DB
     const response = await fetch(process.env.REACT_APP_URL+"/api/participants", {
@@ -65,9 +58,6 @@ export default function RosterCard({
     if (!response.ok) {
       setError(json.error)
     } else {
-      // setError(null);
-      console.log("New Bot Added");
-      // setInput({ botname: "", chipnum: input.chipnum });
       setInput({ botname: "", chipnum: 1 });
       setInputWeight("3lb");
       dispatch({
@@ -90,8 +80,6 @@ export default function RosterCard({
         },
       }
     );
-    // const jsonTM = await response.json()
-    // setError(null)
 
   };
 
@@ -109,7 +97,6 @@ export default function RosterCard({
           <h3>{selectedTourney.name}</h3>
         )}
       </div>
-      {error && <div className="login-error">{error}</div>}
       {selectedBot === null? (
         <>
         {showForm && selectedTourney._id !== "Default" ? (

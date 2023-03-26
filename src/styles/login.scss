@@ -1,7 +1,6 @@
 $main-color:#E31C25;
 $list-color2:#0d47b3;
 $border-color: rgb(210, 208, 208);
-// $font-color: rgb(138, 135, 135);
 $font-color: #6195f5;
 
 .login{
@@ -20,7 +19,7 @@ $font-color: #6195f5;
 
     box-shadow: inset 2px 2px 4px lightgray, 4px 4px 10px $list-color2;
     background-color: white;
-    // padding: 2rem;
+    
     color: $font-color;
     text-shadow: 2px 2px 2px $border-color;
     h2{
@@ -82,7 +81,6 @@ $font-color: #6195f5;
 }
 
 .col-container{
-    // width: 20rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -116,14 +114,12 @@ $font-color: #6195f5;
 
 .signup-error {
     padding: 0.2rem;
-    // padding-bottom: 0.10rem;
-    // margin-bottom: 0.1rem;
     color: red;
     font-size: 1rem;
 }
 
 .login-error {
-    padding: 0.1rem;
+    padding: 0.1rem 1.5rem;
     color: red;
     font-size: 1rem;
 }

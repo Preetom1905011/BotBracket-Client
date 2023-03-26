@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect} from "react";
 import "../styles/card.css";
-import { v4 as uuidv4 } from "uuid";
-import BotList from "./BotList";
 import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Card({ input, setInput, sortedNames, setSortedNames }) {
-  // const [error, setError] = useState(null);
   const { names, dispatch } = useBotsContext();
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext();
@@ -33,7 +29,6 @@ export default function Card({ input, setInput, sortedNames, setSortedNames }) {
         const json = await response.json();
 
         if (response.ok) {
-          console.log("-->", json);
           const data = json.map(
             (bot) =>
               (bot = {
@@ -45,10 +40,8 @@ export default function Card({ input, setInput, sortedNames, setSortedNames }) {
                 signature: bot.signature,
               })
           );
-          console.log("SET DATA", data);
           // setNames(data)
           dispatch({ type: "SET_BOTS", payload: data });
-          console.log(names);
           setSortedNames(names);
         } else {
           console.log("failed");

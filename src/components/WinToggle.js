@@ -1,5 +1,5 @@
 import '../styles/winTog.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function SwitchToggle({outRed, setOutRed, outBlue, setOutBlue, toggleState, setToggleState}) {
 
