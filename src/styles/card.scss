@@ -162,7 +162,8 @@ $delete-color:#E31C25;
     font-size: 1.1rem;
     padding: .5rem 1rem;
 
-    background-color: $roster-shadow;
+    // background-color: $roster-shadow;
+    background-color: #396c91;
     color: white;
     border-radius: 0.5rem;
 
@@ -172,6 +173,7 @@ $delete-color:#E31C25;
         // background-color: paleturquoise;
         // color: $black-color;
         color: white;
+        background-color: $list-color2;
         background-color: $list-color2;
         border: 1px solid lightslategrey;
         // background-color: $black-color;
