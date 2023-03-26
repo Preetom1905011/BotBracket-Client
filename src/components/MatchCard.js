@@ -44,7 +44,7 @@ export default function MatchCard(props) {
     
     const bot = names.find(name => name._id === fighterId);
     if (bot !== undefined){
-      if (Number(bet) < 1 || Number(bet) > Number(bot.chip)){
+      if (Number(bet) < 0 || Number(bet) > Number(bot.chip)){
         alert("You cannot bet " + bet + " chips.\n" + bot.title + " only has " + bot.chip + " chips");
         setBet(1);
       }
@@ -85,7 +85,7 @@ export default function MatchCard(props) {
                 onChange={handleFighterId}
               >
                 <option value="">Select Bot</option>
-                {sortedNames.filter((name) => name.chip !== 0 && !fightersDuo.includes(name._id)).map(name => (
+                {sortedNames.filter((name) => !fightersDuo.includes(name._id)).map(name => (
                   <option value={name._id}>{name.title}</option>
                 ))}
               </select>
@@ -96,7 +96,7 @@ export default function MatchCard(props) {
                   autoComplete="off"
                   value={bet}
                   max= {fighterId === ""? 1: names.find((name) => name._id === fighterId).chip}
-                  min={1}
+                  min={0}
                   onChange={(e) => {setBet(e.target.value)}}
                   required
                 />

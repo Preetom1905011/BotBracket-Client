@@ -213,11 +213,11 @@ export default function MatchScene({sortedNames}) {
           <div className='scroll'>
             {matches.map(match => (
               <li className='match-hist-list' key={match._id}>
-                <div className={Number(match.redScore) < 0? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div className={Number(match.redScore) < 0 || match.redScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
                   <span>{match.red}</span> 
                   {match.redScore}
                 </div>
-                <div className={Number(match.blueScore) < 0? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div className={Number(match.blueScore) < 0 || match.blueScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
                   <span>{match.blueScore}</span>
                   <span>{match.blue}</span> 
                 </div>

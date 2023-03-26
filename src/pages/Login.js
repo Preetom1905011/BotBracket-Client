@@ -41,7 +41,7 @@ export default function Login() {
               <button className="login-bt" type="submit" disabled={isLoading}>
                 Log In
               </button>
-              <a className="right-align">Forgot Password?</a>
+              {/* <a className="right-align">Forgot Password?</a> */}
               <div className="col-container side-container pad-2">
                 New to BotBracket?
                 <Link to="/signup">Sign up</Link>
