@@ -1,5 +1,6 @@
 # BotBracket
-This is my First Project using MERN Stack. 
+This is my First Project using MERN Stack. This is the FrontEnd Part.
+Check out the website here: https://botbracketcrr.netlify.app/
 
 ## To make Robot Fights Easier to Manage
 I made this website for the Combat Ready Robotics Club at Arizona State University. 
