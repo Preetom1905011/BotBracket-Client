@@ -23,7 +23,9 @@ so DON'T FORGET YOUR PASSWORD!
 - You're all set! Go on and have fun!
 
 ## Note
+- Initial login and signup takes a bit time, so please be patient.
 - To select winner, press on the toggle "Winner" button, not the Match Cards.
 - If you want to reset the match and start over, DO NOT PRESS "END MATCH". END MATCH button will add the match to the match history
   and all your rankings will go wack. Press the RESET button on the timer instead.
+- If you have a forced dark mode on your browser, the colors will be all wack.
 - That's it :]
