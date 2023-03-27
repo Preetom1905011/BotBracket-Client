@@ -4,6 +4,7 @@ import { PlusCircle } from 'react-bootstrap-icons'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useBotsContext } from '../hooks/useBotContext';
+import staccato from '../media/staccato_logo.png';
 
 
 export default function MatchCard(props) {
@@ -105,6 +106,7 @@ export default function MatchCard(props) {
           ) : (
               <div className={confirm_style}>
                 <h3>{selectedFighter.title}</h3> 
+                {/* <img src={selectedFighter.title === "Staccato"? staccato :scrappy} alt="Logo"/> */}
                 <img src={scrappy} alt="Logo"/>
                 <h4>Bet: {selectedFighter.bet}</h4>
                 <button onClick={handlePlus} disabled={toggleState !== "na" || timerState !== "reset" }>Remove</button>

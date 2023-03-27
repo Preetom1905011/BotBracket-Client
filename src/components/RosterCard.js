@@ -94,7 +94,7 @@ export default function RosterCard({
         {selectedTourney._id === "Default" ? (
           <h3>No Tournament Selected</h3>
         ) : (
-          <h3>{selectedTourney.name}</h3>
+          <h3>{selectedTourney.name} Roster</h3>
         )}
       </div>
       {selectedBot === null? (

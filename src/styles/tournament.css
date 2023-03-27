@@ -197,20 +197,22 @@
 
 .TM-popup {
   width: auto;
-  height: 2.5rem;
+  height: 3rem;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.2rem;
-  color: rgb(246, 53, 53);
-  text-shadow: 0 0 2px #d7d0d0, 0 0 2px #555454;
-  background-color: rgb(185, 178, 178);
+  font-size: 1.5rem;
+  color: rgb(238, 14, 14);
+  text-shadow: 0 0 2px #f9cd5e, 0 0 2px #fffdfd;
+  background-color: rgb(215, 213, 213);
 }
 
 .TM-check-cancel {
-  width: 4rem;
-  font-size: 0.75rem;
+  width: 5rem;
+  font-size: 1rem;
   border: none;
   border-radius: 0.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .TM-del-bt {

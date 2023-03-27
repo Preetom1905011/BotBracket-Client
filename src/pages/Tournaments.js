@@ -23,10 +23,6 @@ export default function Tournaments() {
   const handleAddConfirm = async (e) => {
     e.preventDefault();
 
-    if (!user) {
-      setError('You must be logged in')
-      return 
-    }
     // add Tournament to DB
     const newTourney = { name: inputTourney, participantIDs: [], matchIDs: [] };
     const response = await fetch(process.env.REACT_APP_URL+"/api/tournaments", {
@@ -66,6 +62,14 @@ export default function Tournaments() {
     setInputTourney({ name: "", _id: "" });
   };
 
+  const handleAllowAddTM = (e) => {
+    if (!user) {
+      setError('You must be logged in')
+      return 
+    }
+    setAllowAddTM(!allowAddTM)
+  }
+
   return (
     <div className="background-style-all">
       <div className="side-grid-main">
@@ -76,7 +80,7 @@ export default function Tournaments() {
               {allowAddTM ? (
                 <button
                   className="add-TM-bt"
-                  onClick={(e) => setAllowAddTM(!allowAddTM)}
+                  onClick={handleAllowAddTM}
                 >
                   Add New Tournament
                 </button>
