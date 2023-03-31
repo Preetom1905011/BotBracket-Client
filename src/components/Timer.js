@@ -4,7 +4,7 @@ import '../styles/timer.css';
 export default function Timer(props) {
     const {toggleState, setToggleState, timerState, setTimerState, reset, outRed, outBlue} = props;
 
-    const [time, setTime] = useState({minutes: "00", seconds: "00"});
+    const [time, setTime] = useState({minutes: "03", seconds: "00"});
     const [counter, setCounter] = useState(0);
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export default function Timer(props) {
         setTimerState("reset");
         setCounter(0);
         setToggleState("na");
-        setTime({minutes: "00", seconds: "00"});
+        setTime({minutes: "03", seconds: "00"});
 
     }
     const handleInput = (event) => {
