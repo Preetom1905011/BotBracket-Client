@@ -248,6 +248,18 @@
   color: rgb(255, 255, 255);
 }
 
+.lock-icon {
+  color: #00375e;
+  margin-top: auto;
+  margin-bottom: 0.25rem;
+  margin-left: 1rem;
+  width: 2rem;
+  height: 1.8rem;
+}
+.lock-icon:hover {
+  color: #7f3fff;
+}
+
 .TM-leader-list {
   width: 95%;
   height: 3rem;

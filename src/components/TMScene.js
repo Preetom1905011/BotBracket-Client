@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { useTMContext } from "../hooks/useTMContext";
 import { useMatchesContext } from "../hooks/useMatchContext";
-import { PencilSquare, Save } from "react-bootstrap-icons";
+import { PencilSquare, Save, Lock, Unlock } from "react-bootstrap-icons";
 import "../styles/tournament.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-export default function TMScene() {
+export default function TMScene({ visPublic, setVisPublic }) {
   const { names, dispatch } = useBotsContext();
   const { selectedTourney, dispatch: selectDispatch } = useSelectedTMContext();
   const { allTournaments, dispatch: allTMDispatch } = useTMContext();
   const { matches, dispatch: matchDispatch } = useMatchesContext();
-  const [sortedNames, setSortedNames] = useState([])
-  const {user} = useAuthContext()
+  const [sortedNames, setSortedNames] = useState([]);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     setSortedNames([...names].sort((a, b) => b.chip - a.chip));
@@ -39,17 +39,17 @@ export default function TMScene() {
     event.preventDefault();
 
     if (!user) {
-      return
+      return;
     }
 
     const response = await fetch(
-      process.env.REACT_APP_URL+"/api/tournaments/" + editing.id,
+      process.env.REACT_APP_URL + "/api/tournaments/" + editing.id,
       {
         method: "PATCH",
         body: JSON.stringify(newTourney),
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${user.token}`
+          Authorization: `Bearer ${user.token}`,
         },
       }
     );
@@ -74,19 +74,22 @@ export default function TMScene() {
 
   useEffect(() => {
     const fetchTMparts = async () => {
-
       if (!user) {
-        return
+        return;
       }
 
       if (selectedTourney._id !== "Default") {
         // load the participants
         const response2 = await fetch(
-          process.env.REACT_APP_URL+'/api/tournaments/bots/' + selectedTourney._id, {
+          process.env.REACT_APP_URL +
+            "/api/tournaments/bots/" +
+            selectedTourney._id,
+          {
             headers: {
-              'Authorization': `Bearer ${user.token}`
-            }
-          })
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         const json2 = await response2.json();
 
         if (response2.ok) {
@@ -101,11 +104,15 @@ export default function TMScene() {
 
         // load the matches
         const response3 = await fetch(
-          process.env.REACT_APP_URL+"/api/tournaments/matches/" + selectedTourney._id, {
+          process.env.REACT_APP_URL +
+            "/api/tournaments/matches/" +
+            selectedTourney._id,
+          {
             headers: {
-              'Authorization': `Bearer ${user.token}`
-            }
-          })
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         const json3 = await response3.json();
 
         if (response3.ok) {
@@ -130,17 +137,17 @@ export default function TMScene() {
   // This will perform the deletion and hide the Confirmation Box
   const handleDeleteTrue = async () => {
     if (!user) {
-      return
+      return;
     }
 
     if (popup.show && popup.id) {
       const response = await fetch(
-        process.env.REACT_APP_URL+"/api/tournaments/" + popup.id,
+        process.env.REACT_APP_URL + "/api/tournaments/" + popup.id,
         {
           method: "DELETE",
           headers: {
-            'Authorization': `Bearer ${user.token}`
-          }
+            Authorization: `Bearer ${user.token}`,
+          },
         }
       );
       const json = await response.json();
@@ -151,11 +158,11 @@ export default function TMScene() {
       // SO IT DOESN'T MOUNT WHEN DEFAULT
       selectDispatch({
         type: "UPDATE_TM",
-        payload: { _id: "Default", name: "Default" },
+        payload: { _id: "Default", name: "Default", public: false },
       });
       // set the names and matches to be empty arrays
-      dispatch({type: 'RESET_BOTS', payload: []})
-      matchDispatch({type: 'SET_MATCHES', payload: []})
+      dispatch({ type: "RESET_BOTS", payload: [] });
+      matchDispatch({ type: "SET_MATCHES", payload: [] });
 
       setPopup({
         show: false,
@@ -164,27 +171,27 @@ export default function TMScene() {
 
       // Delete all the participants from bot DB - update DELETE BOT to DELETE BOTS in context and add a deleteMultipleBots in controller
       const response2 = await fetch(
-        process.env.REACT_APP_URL+"/api/participants/",
+        process.env.REACT_APP_URL + "/api/participants/",
         {
           method: "DELETE",
           body: JSON.stringify(json),
           headers: {
             "Content-Type": "application/json",
-            'Authorization': `Bearer ${user.token}`
+            Authorization: `Bearer ${user.token}`,
           },
         }
       );
       const json2 = await response2.json();
-       
+
       // Delete all the matches from matches DB -
       const response3 = await fetch(
-        process.env.REACT_APP_URL+"/api/matches",
+        process.env.REACT_APP_URL + "/api/matches",
         {
           method: "DELETE",
           body: JSON.stringify(json),
           headers: {
             "Content-Type": "application/json",
-            'Authorization': `Bearer ${user.token}`
+            Authorization: `Bearer ${user.token}`,
           },
         }
       );
@@ -198,6 +205,32 @@ export default function TMScene() {
       show: false,
       id: null,
     });
+  };
+
+  // update Visibility of the Tournament and update the DB
+  const handleVisibility = async () => {
+    setVisPublic(!visPublic);
+
+    const editedTM = allTournaments.find(
+      (TM) => TM._id === selectedTourney._id
+    );
+    const response = await fetch(
+      process.env.REACT_APP_URL + "/api/tournaments/" + selectedTourney._id,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ ...editedTM, public: !visPublic }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
+    const json = await response.json();
+    if (response.ok) {
+      allTMDispatch({ type: "EDIT_TM", payload: json });
+      selectDispatch({ type: "UPDATE_TM", payload: json });
+    }
+    console.log(selectedTourney, visPublic);
   };
 
   return (
@@ -220,19 +253,24 @@ export default function TMScene() {
             <Save className="button-sv TM-sv" onClick={handleSave}></Save>
           </form>
         ) : (
-            <h2>
-              {selectedTourney._id === "Default" ? (
-                "No Tournament Selected"
-              ) : (
-                <>
-                  {selectedTourney.name} Scoreboard
-                  <PencilSquare
-                    className="button-del-ed TM-edit"
-                    onClick={() => handleEdit(selectedTourney)}
-                  />
-                </>
-              )}
-            </h2>
+          <h2>
+            {selectedTourney._id === "Default" ? (
+              "No Tournament Selected"
+            ) : (
+              <>
+                {selectedTourney.name} Scoreboard
+                <PencilSquare
+                  className="button-del-ed TM-edit"
+                  onClick={() => handleEdit(selectedTourney)}
+                />
+                {selectedTourney.public ? (
+                  <Unlock className="lock-icon" onClick={(e) => handleVisibility(e)} />
+                ) : (
+                  <Lock className="lock-icon" onClick={(e) => handleVisibility(e)} />
+                )}
+              </>
+            )}
+          </h2>
         )}
       </div>
 
@@ -253,11 +291,23 @@ export default function TMScene() {
           <div className="TM-matchHist">
             {matches.map((match) => (
               <li className="match-hist-list TM-hist-list" key={match._id}>
-                <div className={Number(match.redScore) < 0 || match.redScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div
+                  className={
+                    Number(match.redScore) < 0 || match.redScore === "-0"
+                      ? "match-list-each list-each-lose"
+                      : "match-list-each list-each-win"
+                  }
+                >
                   <span>{match.red}</span>
                   {match.redScore}
                 </div>
-                <div className={Number(match.blueScore) < 0 || match.blueScore === "-0"? 'match-list-each list-each-lose': 'match-list-each list-each-win'}>
+                <div
+                  className={
+                    Number(match.blueScore) < 0 || match.blueScore === "-0"
+                      ? "match-list-each list-each-lose"
+                      : "match-list-each list-each-win"
+                  }
+                >
                   <span>{match.blueScore}</span>
                   <span>{match.blue}</span>
                 </div>

@@ -18,6 +18,7 @@ export default function Tournaments() {
   const [allowAddTM, setAllowAddTM] = useState(true);
   const [inputTourney, setInputTourney] = useState("");
   const [error, setError] = useState(null);
+  const [visPublic, setVisPublic] = useState(false);
   const {user} = useAuthContext();
 
   const handleAddConfirm = async (e) => {
@@ -41,11 +42,11 @@ export default function Tournaments() {
       botDispatch({ type: "SET_BOTS", payload: newTourney.participantIDs });
       allTMDispatch({
         type: "ADD_TM",
-        payload: { _id: json._id, name: newTourney.name },
+        payload: { _id: json._id, name: newTourney.name, public: json.public},
       });
       selectDispatch({
         type: "UPDATE_TM",
-        payload: { _id: json._id, name: newTourney.name },
+        payload: { _id: json._id, name: newTourney.name, public: json.public},
       });
       matchDispatch({
         type: "SET_MATCHES",
@@ -100,11 +101,11 @@ export default function Tournaments() {
               )}
             </form>
             {error && <div className="login-error">{error}</div>}
-            <TourneyList />
+            <TourneyList visPublic={visPublic} setVisPublic={setVisPublic}/>
           </div>
         </CSSTransition>
         <CSSTransition appear in classNames="TMScene-transition" timeout={350}>
-          <TMScene />
+          <TMScene visPublic={visPublic} setVisPublic={setVisPublic}/>
         </CSSTransition>
       </div>
       <Footer/>

@@ -284,7 +284,18 @@ $match-list-font: rgb(9, 89, 9);
         box-shadow: 3px 3px 3px rgb(255, 255, 255);
         color: rgb(255, 255, 255);
     }
-    
+}
+
+.lock-icon {
+    color: $TM-shadow;
+    margin-top: auto;
+    margin-bottom: 0.25rem;
+    margin-left: 1rem;
+    width: 2rem;
+    height: 1.8rem;
+    &:hover{
+        color: $bot2-color;
+    }
 }
 
 

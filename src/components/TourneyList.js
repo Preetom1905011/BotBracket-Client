@@ -5,7 +5,7 @@ import {useSelectedTMContext} from '../hooks/useSelectedTMContext';
 import { useTMContext } from "../hooks/useTMContext";
 import { useAuthContext } from '../hooks/useAuthContext';
 
-const TourneyList = () => {
+const TourneyList = ({visPublic, setVisPublic}) => {
 
   const {user} = useAuthContext();
   const {selectedTourney, dispatch: selectDispatch} = useSelectedTMContext()
@@ -14,6 +14,9 @@ const TourneyList = () => {
   const handleLoadTourney = async (TM) => {
     // select this TM
     selectDispatch({type: "UPDATE_TM", payload: TM})
+    const {public: isPublic} = TM;
+    setVisPublic(isPublic);
+    console.log(TM)
   }
 
   // Load the tournaments from DB on mount
