@@ -177,6 +177,11 @@
   color: rgb(61, 4, 216);
 }
 
+.twitch-icon {
+  margin-top: 3px;
+  transform: scale(1.2);
+}
+
 .icon-each-me {
   margin-top: 0px;
   margin-bottom: 0px;

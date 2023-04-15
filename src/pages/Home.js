@@ -2,7 +2,7 @@ import React from 'react';
 import home_img from '../media/home_img3.png';
 import scrappy_sticker from '../media/scrappy-sticker.png';
 import ccr_img1 from '../media/crr_img1.jpg';
-import ccr_img2 from '../media/staccato.png';
+import ccr_img2 from '../media/staccato_new.JPG';
 import ccr_img3 from '../media/crr_img3.JPG';
 import ccr_img4 from '../media/crr_img4.png';
 import ccr_img5 from '../media/crr_img5.JPG';
