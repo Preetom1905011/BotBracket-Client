@@ -23,6 +23,9 @@ export default function Navbar() {
         <Link to="/">BotBracket</Link>
       </h1>
       <ul>
+        <Link to="/featured">
+          <li>Featured</li>
+        </Link>
         <Link to="/bracket">
           <li>Bracket</li>
         </Link>

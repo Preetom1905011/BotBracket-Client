@@ -136,7 +136,7 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
 
   return (
     <div>
-      <div className="TM-header">
+      <div className="roster-bot-header">
         {editing.id === selectedBot._id ? (
           <form
             className="TM-edit-form"

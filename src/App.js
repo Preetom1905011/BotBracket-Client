@@ -10,6 +10,9 @@ import Tournaments from "./pages/Tournaments";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import Featured from "./pages/Featured";
+import FeaturedHist from "./pages/FeaturedHist";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   const {user} = useAuthContext()
@@ -17,6 +20,7 @@ function App() {
   return (
       <BrowserRouter>
           <Navbar/>
+          <ScrollTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/roster" element={<Roster />} />
@@ -24,6 +28,8 @@ function App() {
             <Route path="/tournaments" element={<Tournaments />} />
             <Route path="/login" element={!user? <Login /> : <Navigate to="/tournaments"/>} />
             <Route path="/signup" element={!user? <Signup /> : <Navigate to="/tournaments"/>} />
+            <Route path="/featured" element={<Featured />} />
+            <Route path="/featured/:id" element={<FeaturedHist />} />
           </Routes>
       </BrowserRouter>
   );

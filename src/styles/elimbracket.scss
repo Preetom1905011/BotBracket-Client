@@ -1,0 +1,52 @@
+.elim-bracket {
+
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 2rem;
+    ul {
+        display: flex;
+
+        flex-direction: column;
+        width: 200px;
+        list-style: none;
+        padding: 0;
+
+        &:before,
+        &:after {
+            content: " ";
+            display: inline-block;
+            flex-grow: 0.5;
+        }
+        
+        .game + li {
+        flex-grow: 1;
+        // background-color: tomato;
+        }
+
+        .game {
+            padding-left: 20px;
+
+            &.winner {
+                font-weight: bold;
+            }
+
+            span {
+                float: right;
+                margin-right: 5px;
+            }
+
+            &-top {
+                border-bottom: 1px solid #aaa;
+            }
+
+            &-top + li {
+                border-right: 1px solid #aaa;
+                min-height: 40px;
+            }
+
+            &-bottom {
+                border-top: 1px solid #aaa;
+            }
+        }
+    }
+}

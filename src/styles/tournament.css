@@ -59,7 +59,7 @@
   color: navy;
 }
 
-.add-TM-form {
+.add-TM-label {
   width: 25rem;
   height: 3rem;
   margin-top: 0.5rem;
@@ -68,28 +68,54 @@
   margin-bottom: 3rem;
 }
 
-.add-TM-input {
-  width: 25rem;
-  height: 3rem;
+.add-TM-form {
+  width: 99%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: tomato;
+  margin-top: 2.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 3rem;
 }
-.add-TM-input input {
-  width: 15rem;
-  height: 2.9rem;
-  border: 0.1rem solid lightgreen;
-  border-radius: 0.25rem;
-  padding: 1rem 1rem;
-}
-.add-TM-input button {
-  width: 4.9rem;
-  height: 3rem;
+.add-TM-form button {
+  width: 10rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
   border: none;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 1px lawngreen;
   margin-left: 0.05rem;
 }
-.add-TM-input button:hover {
+.add-TM-form button:hover {
   box-shadow: 2px 2px 2px lawngreen;
   color: green;
+}
+
+.add-TM-input {
+  width: 40rem;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-around;
+}
+.add-TM-input input {
+  width: 25rem;
+  height: 2.5rem;
+  border: 0.1rem solid lightgreen;
+  border-radius: 0.25rem;
+  padding: 1rem 1rem;
+}
+.add-TM-input label {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .TM-list-item {
@@ -105,8 +131,8 @@
   list-style-type: none;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
-  background-color: rgb(182, 169, 255);
-  color: #00375e;
+  background-color: rgb(120, 120, 217);
+  color: midnightblue;
   border-radius: 0.5rem;
   box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -144,11 +170,17 @@
 
 .TM-header {
   width: 100%;
-  height: 7rem;
+  height: 6rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 1rem;
+  background-color: rgb(120, 120, 217);
+  color: #00375e;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 
 .TM-details {

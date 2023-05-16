@@ -10,6 +10,7 @@ import '../styles/home.css';
 import { Link} from 'react-router-dom'
 import { useAuthContext } from "../hooks/useAuthContext";
 import Footer from '../components/Footer';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 export default function Home() {
 
@@ -69,7 +70,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+      <a href='#navbar'><ArrowUpwardIcon className='arrow'/></a>
       <Footer/>
     </div>
   )

@@ -1,0 +1,155 @@
+.featured-page {
+  min-height: 100vh;
+}
+
+.featured {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.featured-left {
+  background-color: whitesmoke;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 5px 5px 5px #00375e;
+}
+
+.featured-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 25%;
+  color: #00375e;
+  font-weight: bold;
+  position: fixed;
+  top: 12vh;
+}
+.featured-text img {
+  width: 75%;
+  align-self: center;
+}
+
+.featured-scene {
+  background-color: #e0e0eb;
+}
+
+Link {
+  text-decoration: none;
+}
+Link .featured-card {
+  width: 95%;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px #00375e;
+}
+Link .featured-card h1 {
+  width: 70%;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: rgb(255, 66, 8);
+}
+Link .featured-card:hover {
+  transform: translateX(-0.25rem) translateY(-0.25rem);
+  box-shadow: 10px 10px 10px #00375e;
+}
+Link .featured-card:nth-child(odd) {
+  background-color: whitesmoke !important;
+}
+Link .featured-card:nth-child(even) {
+  background-color: rgb(208, 236, 245) !important;
+}
+
+.featured-card {
+  width: 95%;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px #00375e;
+}
+.featured-card h1 {
+  width: 70%;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #00375e;
+}
+.featured-card:hover {
+  transform: translateX(-0.25rem) translateY(-0.25rem);
+  box-shadow: 10px 10px 10px #00375e;
+}
+
+a {
+  text-decoration: none;
+}
+a:nth-of-type(odd) .featured-card {
+  background-color: rgb(211, 209, 250);
+}
+a:nth-of-type(even) .featured-card {
+  background-color: rgb(231, 230, 253);
+}
+
+.winner-feature {
+  background-color: #fdc872;
+  width: 90%;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border-bottom: 5px solid #00375e;
+}
+.winner-feature h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: maroon;
+}
+.winner-feature h2 {
+  display: flex;
+  flex-direction: row;
+  color: #00375e;
+}
+
+.scroll-box-featured {
+  height: 80%;
+}
+
+.user-date {
+  text-align: right;
+}
+.user-date h3 {
+  padding-bottom: 1rem;
+  color: rgb(64, 118, 71);
+}
+
+.featureLeft-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(-100%);
+}
+
+.featureLeft-transition-appear-active {
+  transform: translateX(0);
+}
+
+.featureScene-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(100%);
+}
+
+.featureScene-transition-appear-active {
+  transform: translateX(0);
+}/*# sourceMappingURL=featured.css.map */

@@ -6,8 +6,17 @@ import { useMatchesContext } from "../hooks/useMatchContext";
 import { PencilSquare, Save, Lock, Unlock } from "react-bootstrap-icons";
 import "../styles/tournament.css";
 import { useAuthContext } from "../hooks/useAuthContext";
+import TMAddForm from "../components/TMAddForm";
 
-export default function TMScene({ visPublic, setVisPublic }) {
+export default function TMScene({
+  visPublic,
+  setVisPublic,
+  allowAddTM,
+  setAllowAddTM,
+  showTMForm,
+  setShowTMForm,
+  setError,
+}) {
   const { names, dispatch } = useBotsContext();
   const { selectedTourney, dispatch: selectDispatch } = useSelectedTMContext();
   const { allTournaments, dispatch: allTMDispatch } = useTMContext();
@@ -264,9 +273,15 @@ export default function TMScene({ visPublic, setVisPublic }) {
                   onClick={() => handleEdit(selectedTourney)}
                 />
                 {selectedTourney.public ? (
-                  <Unlock className="lock-icon" onClick={(e) => handleVisibility(e)} />
+                  <Unlock
+                    className="lock-icon"
+                    onClick={(e) => handleVisibility(e)}
+                  />
                 ) : (
-                  <Lock className="lock-icon" onClick={(e) => handleVisibility(e)} />
+                  <Lock
+                    className="lock-icon"
+                    onClick={(e) => handleVisibility(e)}
+                  />
                 )}
               </>
             )}
@@ -274,79 +289,83 @@ export default function TMScene({ visPublic, setVisPublic }) {
         )}
       </div>
 
-      <div className="TM-details">
-        <div className="TM-grid">
-          <h3>Leaderboard</h3>
-          <h3>Match History</h3>
-        </div>
-        <div className="TM-grid scroll">
-          <div className="TM-leaderboard">
-            {sortedNames.map((name) => (
-              <li className="TM-leader-list container" key={name._id}>
-                {name.title}
-                <div>{name.chip}</div>
-              </li>
-            ))}
+      {!showTMForm ? (
+        <div className="TM-details">
+          <div className="TM-grid">
+            <h3>Leaderboard</h3>
+            <h3>Match History</h3>
           </div>
-          <div className="TM-matchHist">
-            {matches.map((match) => (
-              <li className="match-hist-list TM-hist-list" key={match._id}>
-                <div
-                  className={
-                    Number(match.redScore) < 0 || match.redScore === "-0"
-                      ? "match-list-each list-each-lose"
-                      : "match-list-each list-each-win"
-                  }
-                >
-                  <span>{match.red}</span>
-                  {match.redScore}
+          <div className="TM-grid scroll">
+            <div className="TM-leaderboard">
+              {sortedNames.map((name) => (
+                <li className="TM-leader-list container" key={name._id}>
+                  {name.title}
+                  <div>{name.chip}</div>
+                </li>
+              ))}
+            </div>
+            <div className="TM-matchHist">
+              {matches.map((match) => (
+                <li className="match-hist-list TM-hist-list" key={match._id}>
+                  <div
+                    className={
+                      Number(match.redScore) < 0 || match.redScore === "-0"
+                        ? "match-list-each list-each-lose"
+                        : "match-list-each list-each-win"
+                    }
+                  >
+                    <span>{match.red}</span>
+                    {match.redScore}
+                  </div>
+                  <div
+                    className={
+                      Number(match.blueScore) < 0 || match.blueScore === "-0"
+                        ? "match-list-each list-each-lose"
+                        : "match-list-each list-each-win"
+                    }
+                  >
+                    <span>{match.blueScore}</span>
+                    <span>{match.blue}</span>
+                  </div>
+                </li>
+              ))}
+            </div>
+          </div>
+          <div className="TM-scene-bottom">
+            {!popup.show ? (
+              <button
+                className="TM-del-bt"
+                onClick={() => handleDelete(selectedTourney)}
+                disabled={selectedTourney._id === "Default" ? true : false}
+              >
+                Delete Tournament
+              </button>
+            ) : (
+              <>
+                <div className="popup-box TM-popup">
+                  <p>Remove {selectedTourney.name}?</p>
+                  <div>
+                    <button
+                      className="check-button TM-check-cancel"
+                      onClick={handleDeleteTrue}
+                    >
+                      Confirm
+                    </button>
+                    <button
+                      className="cancel-button TM-check-cancel"
+                      onClick={handleDeleteFalse}
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </div>
-                <div
-                  className={
-                    Number(match.blueScore) < 0 || match.blueScore === "-0"
-                      ? "match-list-each list-each-lose"
-                      : "match-list-each list-each-win"
-                  }
-                >
-                  <span>{match.blueScore}</span>
-                  <span>{match.blue}</span>
-                </div>
-              </li>
-            ))}
+              </>
+            )}
           </div>
         </div>
-        <div className="TM-scene-bottom">
-          {!popup.show ? (
-            <button
-              className="TM-del-bt"
-              onClick={() => handleDelete(selectedTourney)}
-              disabled={selectedTourney._id === "Default" ? true : false}
-            >
-              Delete Tournament
-            </button>
-          ) : (
-            <>
-              <div className="popup-box TM-popup">
-                <p>Remove {selectedTourney.name}?</p>
-                <div>
-                  <button
-                    className="check-button TM-check-cancel"
-                    onClick={handleDeleteTrue}
-                  >
-                    Confirm
-                  </button>
-                  <button
-                    className="cancel-button TM-check-cancel"
-                    onClick={handleDeleteFalse}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
+      ) : (
+        <TMAddForm setError={setError} setAllowAddTM={setAllowAddTM} setShowTMForm={setShowTMForm}/>
+      )}
     </div>
   );
 }

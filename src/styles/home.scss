@@ -13,8 +13,10 @@ $nav-color: #e13941;
     flex-direction: column;
     justify-content: space-between;
     background-color: #0873f6;
+
     
 }
+
 
 .main{
     // background-color: aquamarine;
@@ -159,6 +161,21 @@ $nav-color: #e13941;
     height: 25vh;
 }
 
+.arrow{
+    position: fixed;
+    top: 90vh;
+    right: 1.5vw;
+    transform: scale(2);
+    padding: .3rem;
+    border-radius: 50%;
+    color: white;
+    background-color: $main-color;
+    &:hover{
+        background-color: $list-color2;
+    }
+    cursor: pointer;
+}
+
 
 .footer-home{
     width: 100%;
@@ -171,7 +188,7 @@ $nav-color: #e13941;
 
     background-color: #ca91ff;
     color: white;
-    h7{
+    h4{
         font-size: 1rem;
         color: #141414;
     }

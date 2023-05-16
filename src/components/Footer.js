@@ -13,7 +13,7 @@ export default function Footer() {
         <a href="mailto: pbiswa11@asu.edu"><EmailIcon className="icon-each icon-each-me"/></a>
         <a href="https://github.com/Preetom1905011"><GitHubIcon className="icon-each icon-each-me"/></a>
         Preetom Biswas &copy; 2023</p>
-      <h7>Combat Ready Robotics @ ASU</h7>
+      <h4>Combat Ready Robotics @ ASU</h4>
       <div className="social-box">
         <a href="mailto: combatreadyrobotics@gmail.com"><EmailIcon className="icon-each"/></a>
         <a href="https://www.instagram.com/combatreadyrobotics/"><InstagramIcon className="icon-each"/></a>
