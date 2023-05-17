@@ -16,7 +16,6 @@ const TourneyList = ({visPublic, setVisPublic, allowAddTM, setAllowAddTM, setSho
     selectDispatch({type: "UPDATE_TM", payload: TM})
     const {public: isPublic} = TM;
     setVisPublic(isPublic);
-    console.log(TM)
 
     if (!allowAddTM){
       setAllowAddTM(true);
@@ -33,7 +32,6 @@ const TourneyList = ({visPublic, setVisPublic, allowAddTM, setAllowAddTM, setSho
         }
       })
       const json = await response.json()
-      console.log("->", json)
 
       if (response.ok){
         allTMDispatch({type: 'SET_TMS', payload: json})

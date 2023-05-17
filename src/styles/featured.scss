@@ -44,6 +44,25 @@ $list-color2: #8a2be2;
 .featured-scene {
   background-color: #e0e0eb;
 }
+.feature-loader{
+  width: 18rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img{
+    width: 80%;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    animation: left-right 2.5s linear alternate-reverse infinite;
+  }
+  position: fixed;
+  top: 20vh;
+  // right: 10vw;
+  left: 50vw;
+
+}
 
 .featured-card {
   width: 95%;
@@ -138,4 +157,14 @@ a {
 
 .featureScene-transition-appear-active {
   transform: translateX(0);
+}
+
+// Animation
+@keyframes left-right{
+  from{
+      transform: translateX(2rem);
+  }
+  to{
+      transform: translateX(-2rem);
+  }
 }

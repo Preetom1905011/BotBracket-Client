@@ -4,14 +4,19 @@ import { CSSTransition } from "react-transition-group";
 import FeaturedCard from "../components/FeaturedCard";
 import logo from "../media/scrappyhead_sticker_purple2.png";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { RiseLoader} from "react-spinners";
+import loadScrappy from "../media/Scrappy2_loading.png";
 
 export default function Featured() {
   const [allPubTMs, setAllPubTMs] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
+  const [isFetching, setIsFetching] = useState(null);
 
   // get all the tournaments that are public
   useEffect(() => {
     // fetch all the userIDs
+    setIsFetching(true);
+
     const fetchData = async () => {
       const responseUser = await fetch(process.env.REACT_APP_URL + "/api/user");
       const jsonUser = await responseUser.json();
@@ -35,6 +40,7 @@ export default function Featured() {
         })
         .then(function (data) {
           // Log the data to the console
+          setIsFetching(false);
           let pubTM = [];
           data.forEach((d) => {
             Array.prototype.push.apply(pubTM, d);
@@ -52,6 +58,7 @@ export default function Featured() {
         })
         .catch(function (error) {
           // if there's an error, log it
+          setIsFetching(false);
           console.log(error);
         });
     };
@@ -88,9 +95,17 @@ export default function Featured() {
             {allPubTMs.map((TM) => (
               <FeaturedCard TM={TM} allUsers={allUsers} />
             ))}
+
+            {isFetching && <div className="feature-loader">
+                            <img src={loadScrappy}/>
+                            <RiseLoader
+                              color={"#00375e"}
+                              loading={isFetching}
+                              size={50}/></div>}
           </div>
         </CSSTransition>
       </div>
+      
 
       <a href="#navbar">
         <ArrowUpwardIcon className="arrow" />

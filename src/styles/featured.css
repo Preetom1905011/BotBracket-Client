@@ -42,6 +42,24 @@
   background-color: #e0e0eb;
 }
 
+.feature-loader {
+  width: 18rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 20vh;
+  left: 50vw;
+}
+.feature-loader img {
+  width: 80%;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: left-right 2.5s linear alternate-reverse infinite;
+}
+
 .featured-card {
   width: 95%;
   height: 10rem;
@@ -125,4 +143,13 @@ a:nth-of-type(even) .featured-card {
 
 .featureScene-transition-appear-active {
   transform: translateX(0);
+}
+
+@keyframes left-right {
+  from {
+    transform: translateX(2rem);
+  }
+  to {
+    transform: translateX(-2rem);
+  }
 }/*# sourceMappingURL=featured.css.map */
