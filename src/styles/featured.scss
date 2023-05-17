@@ -1,5 +1,6 @@
 $main-color: #00375e;
 $list-color2: #8a2be2;
+$feature-bg: '../media/feature_scrap2.png';
 
 .featured-page {
   min-height: 100vh;
@@ -16,6 +17,11 @@ $list-color2: #8a2be2;
   margin-right: 5px;
   border: none;
   box-shadow: 5px 5px 5px $main-color;
+  background-image: url($feature-bg);
+  // background-size: contain;
+  background-size: 30% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .featured-text{
   display: flex;
@@ -26,7 +32,7 @@ $list-color2: #8a2be2;
   font-weight: bold;
 
   position: fixed;
-  top: 12vh;
+  bottom: 37vh;
 
   img{
     width: 75%;
@@ -162,9 +168,9 @@ a {
 // Animation
 @keyframes left-right{
   from{
-      transform: translateX(2rem);
+      transform: translateX(-2rem);
   }
   to{
-      transform: translateX(-2rem);
+      transform: translateX(2rem);
   }
 }

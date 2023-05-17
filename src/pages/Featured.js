@@ -77,10 +77,10 @@ export default function Featured() {
         >
           <div className="featured-left">
             <div className="featured-text">
-              <img src={logo} />
+              {/* <img src={logo} /> */}
               <h4>Check out some of the awesome tournaments managed using</h4>
               <h2>BotBracket</h2>
-              <img src={logo} />
+              {/* <img src={logo} /> */}
             </div>
           </div>
         </CSSTransition>
@@ -93,7 +93,7 @@ export default function Featured() {
         >
           <div className="featured-scene">
             {allPubTMs.map((TM) => (
-              <FeaturedCard TM={TM} allUsers={allUsers} />
+              <FeaturedCard TM={TM} allUsers={allUsers} key={TM?._id}/>
             ))}
 
             {isFetching && <div className="feature-loader">

@@ -13,6 +13,10 @@
   margin-right: 5px;
   border: none;
   box-shadow: 5px 5px 5px #00375e;
+  background-image: url("../media/feature_scrap2.png");
+  background-size: 30% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .featured-text {
@@ -23,7 +27,7 @@
   color: #00375e;
   font-weight: bold;
   position: fixed;
-  top: 12vh;
+  bottom: 37vh;
 }
 .featured-text img {
   width: 75%;
@@ -147,9 +151,9 @@ a:nth-of-type(even) .featured-card {
 
 @keyframes left-right {
   from {
-    transform: translateX(2rem);
+    transform: translateX(-2rem);
   }
   to {
-    transform: translateX(-2rem);
+    transform: translateX(2rem);
   }
 }/*# sourceMappingURL=featured.css.map */
