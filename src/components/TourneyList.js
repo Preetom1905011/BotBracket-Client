@@ -5,7 +5,7 @@ import {useSelectedTMContext} from '../hooks/useSelectedTMContext';
 import { useTMContext } from "../hooks/useTMContext";
 import { useAuthContext } from '../hooks/useAuthContext';
 
-const TourneyList = ({visPublic, setVisPublic}) => {
+const TourneyList = ({visPublic, setVisPublic, allowAddTM, setAllowAddTM, setShowTMForm}) => {
 
   const {user} = useAuthContext();
   const {selectedTourney, dispatch: selectDispatch} = useSelectedTMContext()
@@ -17,6 +17,11 @@ const TourneyList = ({visPublic, setVisPublic}) => {
     const {public: isPublic} = TM;
     setVisPublic(isPublic);
     console.log(TM)
+
+    if (!allowAddTM){
+      setAllowAddTM(true);
+      setShowTMForm(false);
+    }
   }
 
   // Load the tournaments from DB on mount
@@ -28,6 +33,7 @@ const TourneyList = ({visPublic, setVisPublic}) => {
         }
       })
       const json = await response.json()
+      console.log("->", json)
 
       if (response.ok){
         allTMDispatch({type: 'SET_TMS', payload: json})

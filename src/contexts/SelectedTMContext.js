@@ -17,7 +17,7 @@ export const selectedTMReducer = (state, action) => {
 export const SelectedTMContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(selectedTMReducer, {
-        selectedTourney: {_id: "Default", name: "Default", public: Boolean(false)}
+        selectedTourney: {_id: "Default", name: "Default", public: Boolean(false), style: "Token", size: 48}
     })
 
     return (

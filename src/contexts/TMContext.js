@@ -6,7 +6,7 @@ export const TMReducer = (state, action) => {
     switch (action.type) {
         case 'SET_TMS':
             return {
-                allTournaments: action.payload.map((p) => p = {_id: p._id, name: p.name, public: p.public})
+                allTournaments: action.payload.map((p) => p = {_id: p._id, name: p.name, public: p.public, style: p.style, size: p.size})
             }
         case 'ADD_TM':
             return {

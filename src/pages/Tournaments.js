@@ -23,14 +23,11 @@ export default function Tournaments() {
     }
     setAllowAddTM(!allowAddTM);
     setShowTMForm(true);
-    
 
     selectDispatch({
       type: "UPDATE_TM",
       payload: { _id: "Default", name: "Default", public: Boolean(false) },
     });
-
-
   };
 
   return (
@@ -45,11 +42,17 @@ export default function Tournaments() {
                   Create New Tournament
                 </button>
               ) : (
-                <div className="label-roster">Fill out the form</div>
+                <div className="label-roster label-TM">Fill out the form</div>
               )}
             </form>
             {error && <div className="login-error">{error}</div>}
-            <TourneyList visPublic={visPublic} setVisPublic={setVisPublic} />
+            <TourneyList
+              visPublic={visPublic}
+              setVisPublic={setVisPublic}
+              allowAddTM={allowAddTM}
+              setAllowAddTM={setAllowAddTM}
+              setShowTMForm={setShowTMForm}
+            />
           </div>
         </CSSTransition>
         <CSSTransition appear in classNames="TMScene-transition" timeout={350}>

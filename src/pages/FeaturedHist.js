@@ -50,8 +50,8 @@ export default function FeaturedHist() {
             <div className="TM-header">
               <h2>{TM ? TM.name : "Tournament Not Public"}</h2>
             </div>
-            <div>
-              <br/>
+            <div className="scroll-featured">
+              <h2>Match History</h2>
               <div className="scroll">
                 {matches?.map((match) => (
                   <li className="match-hist-list" key={match._id}>

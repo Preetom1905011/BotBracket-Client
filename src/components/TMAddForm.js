@@ -26,6 +26,8 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
       name: inputTourney,
       participantIDs: [],
       matchIDs: [],
+      style: styleTourney,
+      size: styleTourney === "Token"? 48: sizeTourney
     };
     const response = await fetch(
       process.env.REACT_APP_URL + "/api/tournaments",
@@ -46,11 +48,11 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
       botDispatch({ type: "SET_BOTS", payload: newTourney.participantIDs });
       allTMDispatch({
         type: "ADD_TM",
-        payload: { _id: json._id, name: newTourney.name, public: json.public },
+        payload: { _id: json._id, name: newTourney.name, public: json.public , style: json.style, size: json.size},
       });
       selectDispatch({
         type: "UPDATE_TM",
-        payload: { _id: json._id, name: newTourney.name, public: json.public },
+        payload: { _id: json._id, name: newTourney.name, public: json.public , style: json.style, size: json.size},
       });
       matchDispatch({
         type: "SET_MATCHES",
@@ -69,6 +71,9 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
     setAllowAddTM(true);
     setShowTMForm(false);
     setInputTourney({ name: "", _id: "" });
+    // reset bot and match context
+    botDispatch({type: "RESET_BOTS"});
+    matchDispatch({type: "SET_MATCHES", payload: []});
   };
 
   return (
@@ -85,7 +90,7 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
             required
           />
         </div>
-        <div>
+        <div className="add-TM-style">
           <label>Tournament Style :</label>
           <select
             name="tourneyStyle"
@@ -97,7 +102,7 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
             <option value="Double" >Double Elimination</option>
           </select>
         </div>
-        <div>
+        <div className="add-TM-size">
           <label>Bracket Size : &nbsp; </label>
           {(styleTourney === "Token" ? <label> 48 </label> : 
           <select
@@ -111,7 +116,7 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
             <option value={parseInt(32)}>32</option>
           </select>)}
         </div>
-        <div>
+        <div className="button-box-TM">
           <button type="submit">Add</button>
           <button onClick={handleCancel}>Cancel</button>
         </div>

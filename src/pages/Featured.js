@@ -3,7 +3,7 @@ import "../styles/featured.css";
 import { CSSTransition } from "react-transition-group";
 import FeaturedCard from "../components/FeaturedCard";
 import logo from "../media/scrappyhead_sticker_purple2.png";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 export default function Featured() {
   const [allPubTMs, setAllPubTMs] = useState([]);
@@ -70,10 +70,10 @@ export default function Featured() {
         >
           <div className="featured-left">
             <div className="featured-text">
-              <img src={logo}/>
+              <img src={logo} />
               <h4>Check out some of the awesome tournaments managed using</h4>
               <h2>BotBracket</h2>
-              <img src={logo}/>
+              <img src={logo} />
             </div>
           </div>
         </CSSTransition>
@@ -92,7 +92,9 @@ export default function Featured() {
         </CSSTransition>
       </div>
 
-      <a href='#navbar'><ArrowUpwardIcon className='arrow'/></a>
+      <a href="#navbar">
+        <ArrowUpwardIcon className="arrow" />
+      </a>
     </div>
   );
 }

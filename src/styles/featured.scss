@@ -12,7 +12,7 @@ $list-color2: #8a2be2;
 }
 
 .featured-left {
-  background-color: whitesmoke;
+  background-color: rgb(228, 232, 245);
   margin-right: 5px;
   border: none;
   box-shadow: 5px 5px 5px $main-color;
@@ -33,50 +33,16 @@ $list-color2: #8a2be2;
     align-self: center;
   }
 }
+.scroll-featured{
+  height: 90%;
+  h2{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
 
 .featured-scene {
   background-color: #e0e0eb;
-}
-Link {
-  text-decoration: none;
-
-  .featured-card {
-    width: 95%;
-    height: 10rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem 2rem;
-
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 5px 5px 5px $main-color;
-
-    h1 {
-      width: 70%;
-      margin-top: auto;
-      margin-bottom: auto;
-      color: rgb(255, 66, 8);
-    }
-
-    &:hover {
-      transform: translateX(-0.25rem) translateY(-0.25rem);
-      box-shadow: 10px 10px 10px $main-color;
-    }
-
-    &:nth-child(odd) {
-      background-color: whitesmoke !important;
-    }
-
-    &:nth-child(even) {
-      background-color: rgb(208, 236, 245) !important;
-    }
-  }
 }
 
 .featured-card {
@@ -113,12 +79,13 @@ a {
   text-decoration: none;
   &:nth-of-type(odd) {
     .featured-card {
-      background-color: rgb(211, 209, 250);
+      // background-color: rgb(211, 209, 250);
+      background-color: rgb(205, 204, 234);
     }
   }
   &:nth-of-type(even) {
     .featured-card {
-      background-color: rgb(231, 230, 253);
+      background-color: rgb(238, 237, 245);
     }
   }
 }

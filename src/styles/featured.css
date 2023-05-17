@@ -9,7 +9,7 @@
 }
 
 .featured-left {
-  background-color: whitesmoke;
+  background-color: rgb(228, 232, 245);
   margin-right: 5px;
   border: none;
   box-shadow: 5px 5px 5px #00375e;
@@ -30,43 +30,16 @@
   align-self: center;
 }
 
-.featured-scene {
-  background-color: #e0e0eb;
+.scroll-featured {
+  height: 90%;
+}
+.scroll-featured h2 {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
-Link {
-  text-decoration: none;
-}
-Link .featured-card {
-  width: 95%;
-  height: 10rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2rem 2rem;
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 5px 5px 5px #00375e;
-}
-Link .featured-card h1 {
-  width: 70%;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: rgb(255, 66, 8);
-}
-Link .featured-card:hover {
-  transform: translateX(-0.25rem) translateY(-0.25rem);
-  box-shadow: 10px 10px 10px #00375e;
-}
-Link .featured-card:nth-child(odd) {
-  background-color: whitesmoke !important;
-}
-Link .featured-card:nth-child(even) {
-  background-color: rgb(208, 236, 245) !important;
+.featured-scene {
+  background-color: #e0e0eb;
 }
 
 .featured-card {
@@ -99,10 +72,10 @@ a {
   text-decoration: none;
 }
 a:nth-of-type(odd) .featured-card {
-  background-color: rgb(211, 209, 250);
+  background-color: rgb(205, 204, 234);
 }
 a:nth-of-type(even) .featured-card {
-  background-color: rgb(231, 230, 253);
+  background-color: rgb(238, 237, 245);
 }
 
 .winner-feature {

@@ -88,15 +88,15 @@ $match-list-font: rgb(9, 89, 9);
 }
 .add-TM-form {
     width: 99%;
-    height: 20rem;
+    height: 22rem;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: tomato;
+    // background-color: tomato;
 
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
     margin-right: 1rem;
     margin-left: 0.5rem;
     margin-bottom: 3rem;
@@ -118,9 +118,13 @@ $match-list-font: rgb(9, 89, 9);
     }
 }
 
+.label-TM{
+    background-color: rgb(192, 192, 247);
+}
+
 
 .add-TM-input{
-    width: 40rem;
+    width: 42rem;
     height: 2.5rem;
 
     display: flex;
@@ -131,17 +135,71 @@ $match-list-font: rgb(9, 89, 9);
     input{
         width: 25rem;
         height: 2.5rem;
-        border: 0.1rem solid lightgreen;
+        font-size: 1.3rem;
+        border: 0.1rem solid rgb(192, 192, 247);
         border-radius: 0.25rem;
-        padding: 1rem 1rem;   
+        padding: 1rem 1rem;  
+        color: rgb(46, 46, 117);
     }
     label {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         text-align: center;
         margin-top: auto;
         margin-bottom: auto;
+        margin-right: 0.2rem;
+        color: rgb(46, 46, 117);
     }
 }
+
+.add-TM-style {
+    width: 26rem;
+    height: 2rem;
+    // background-color: red;
+    label {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 0.5rem;
+        color: rgb(46, 46, 117);
+    }
+    select {
+        width: 13rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        border: 0.1rem solid rgb(192, 192, 247);
+        border-radius: 0.25rem;  
+        color: rgb(46, 46, 117);
+        padding-left: 0.5rem;
+    }
+}
+
+.add-TM-size{
+    width: 18rem;
+    height: 2rem;
+    // background-color: red;
+    label {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 0.5rem;
+        color: rgb(46, 46, 117);
+    }
+    select {
+        width: 4rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        border: 0.1rem solid rgb(192, 192, 247);
+        border-radius: 0.25rem;  
+        color: rgb(46, 46, 117);
+        padding-left: 0.5rem;
+    }
+}
+.button-box-TM{
+    margin-top: 3rem;
+}
+
 
 .TM-list-item {
     width: 23.5rem;
@@ -183,7 +241,7 @@ $match-list-font: rgb(9, 89, 9);
 
 .TM-scene {
     width: 65vw;
-    min-height: 75rem;
+    max-height: 75rem;
     border: 1px solid $border-color;
     border-radius: 1rem;
     box-shadow: 5px 5px 5px $TM-shadow;
