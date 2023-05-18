@@ -7,6 +7,8 @@ import { PencilSquare, Save, Lock, Unlock } from "react-bootstrap-icons";
 import "../styles/tournament.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 import TMAddForm from "../components/TMAddForm";
+import { RiseLoader} from "react-spinners";
+import loadScrappy from "../media/Scrappy2_loading.png";
 
 export default function TMScene({
   visPublic,
@@ -22,6 +24,7 @@ export default function TMScene({
   const { allTournaments, dispatch: allTMDispatch } = useTMContext();
   const { matches, dispatch: matchDispatch } = useMatchesContext();
   const [sortedNames, setSortedNames] = useState([]);
+  const [isLoading, setIsLoading] = useState(null);
   const { user } = useAuthContext();
 
   useEffect(() => {
@@ -86,53 +89,60 @@ export default function TMScene({
       if (!user) {
         return;
       }
-
+    
       if (selectedTourney._id !== "Default") {
-        // load the participants
-        const response2 = await fetch(
-          process.env.REACT_APP_URL +
-            "/api/tournaments/bots/" +
-            selectedTourney._id,
+        setIsLoading(true);
+        const fetchBots = fetch(
+          process.env.REACT_APP_URL + "/api/tournaments/bots/" + selectedTourney._id,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
             },
           }
         );
+    
+        const fetchMatches = fetch(
+          process.env.REACT_APP_URL + "/api/tournaments/matches/" + selectedTourney._id,
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
+    
+        const [response2, response3] = await Promise.all([fetchBots, fetchMatches]);
+    
         const json2 = await response2.json();
-
+        const json3 = await response3.json();
+    
         if (response2.ok) {
-          const data = json2.map(
-            (bot) => (bot = { _id: bot._id, title: bot.title, chip: bot.chip })
-          );
+          setIsLoading(false);
+          const data = json2.map((bot) => ({
+            _id: bot._id,
+            title: bot.title,
+            chip: bot.chip,
+          }));
           // setNames(data)
           dispatch({ type: "SET_BOTS", payload: data });
+
         } else {
+          setIsLoading(false);
           console.log("failed");
         }
-
-        // load the matches
-        const response3 = await fetch(
-          process.env.REACT_APP_URL +
-            "/api/tournaments/matches/" +
-            selectedTourney._id,
-          {
-            headers: {
-              Authorization: `Bearer ${user.token}`,
-            },
-          }
-        );
-        const json3 = await response3.json();
-
+    
         if (response3.ok) {
+          setIsLoading(false);
           // setNames(data)
           matchDispatch({ type: "SET_MATCHES", payload: json3 });
         } else {
+          setIsLoading(false);
           console.log("failed");
         }
       }
     };
+    
     fetchTMparts();
+    
   }, [selectedTourney, user]);
 
   // This will show the Cofirmation Box
@@ -366,6 +376,13 @@ export default function TMScene({
       ) : (
         <TMAddForm setError={setError} setAllowAddTM={setAllowAddTM} setShowTMForm={setShowTMForm}/>
       )}
+      {isLoading && <div className="feature-loader">
+                      <img src={loadScrappy}/>
+                      <RiseLoader
+                        color={"#00375e"}
+                        loading={isLoading}
+                        className="loader"
+                        size={30}/></div>}
     </div>
   );
 }

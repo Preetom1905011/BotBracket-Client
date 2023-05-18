@@ -56,17 +56,21 @@ $feature-bg: '../media/feature_scrap2.png';
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  position: fixed;
+  top: 25vh;
+  left: 50vw;
   img{
     width: 80%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
-    animation: left-right 2.5s linear alternate-reverse infinite;
+    animation: left-right 3s linear alternate-reverse infinite;
   }
-  position: fixed;
-  top: 20vh;
-  // right: 10vw;
-  left: 50vw;
+  .loader{
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
 
@@ -168,7 +172,7 @@ a {
 // Animation
 @keyframes left-right{
   from{
-      transform: translateX(-2rem);
+      transform: translateX(-3rem);
   }
   to{
       transform: translateX(2rem);

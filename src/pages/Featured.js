@@ -48,7 +48,8 @@ export default function Featured() {
                             <RiseLoader
                               color={"#00375e"}
                               loading={isFetching}
-                              size={50}/></div>}
+                              className="loader"
+                              size={30}/></div>}
           </div>
         </CSSTransition>
       </div>
