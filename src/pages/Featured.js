@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "../styles/featured.css";
 import { CSSTransition } from "react-transition-group";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import FeaturedCard from "../components/FeaturedCard";
-import logo from "../media/scrappyhead_sticker_purple2.png";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { RiseLoader} from "react-spinners";
 import loadScrappy from "../media/Scrappy2_loading.png";
+import { useFeatureFetch } from "../hooks/useFeatureFetch";
+
 
 export default function Featured() {
-  const location = useLocation();
+  // const location = useLocation();
+  // const { allPubTMs, allUsers, isFetching } = location.state;
 
-  const { allPubTMs, allUsers, isFetching } = location.state;
+  const {fetchFeaturedTMs, allPubTMs, allUsers, isFetching} = useFeatureFetch();
+
+  useEffect(() => {
+    console.log("start in feature")
+    const fetchData = async () => {
+      await fetchFeaturedTMs();
+    }
+    fetchData();
+    console.log("end in feature")
+
+  }, [])
+
 
   return (
     <div className="featured-page">

@@ -15,10 +15,14 @@ export default function Navbar() {
   const {fetchFeaturedTMs, allPubTMs, allUsers, isFetching} = useFeatureFetch();
 
   useEffect(() => {
+  
+    console.log("start in load")
     const fetchData = async () => {
       await fetchFeaturedTMs();
     }
     fetchData();
+    console.log("end in load")
+
   }, [])
 
   const handleClick = () => {

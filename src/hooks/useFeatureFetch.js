@@ -53,6 +53,7 @@ export const useFeatureFetch = () => {
         setIsFetching(false);
         console.log(error);
       });
+      console.log("going")
   };
 
   return {fetchFeaturedTMs, allPubTMs, allUsers, isFetching};

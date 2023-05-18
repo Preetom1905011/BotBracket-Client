@@ -91,7 +91,9 @@ export default function TMScene({
       }
     
       if (selectedTourney._id !== "Default") {
-        setIsLoading(true);
+        dispatch({ type: "SET_BOTS", payload: [] });
+        matchDispatch({ type: "SET_MATCHES", payload: [] });
+        // setIsLoading(true);
         const fetchBots = fetch(
           process.env.REACT_APP_URL + "/api/tournaments/bots/" + selectedTourney._id,
           {
@@ -116,7 +118,7 @@ export default function TMScene({
         const json3 = await response3.json();
     
         if (response2.ok) {
-          setIsLoading(false);
+          // setIsLoading(false);
           const data = json2.map((bot) => ({
             _id: bot._id,
             title: bot.title,
@@ -126,16 +128,16 @@ export default function TMScene({
           dispatch({ type: "SET_BOTS", payload: data });
 
         } else {
-          setIsLoading(false);
+          // setIsLoading(false);
           console.log("failed");
         }
     
         if (response3.ok) {
-          setIsLoading(false);
+          // setIsLoading(false);
           // setNames(data)
           matchDispatch({ type: "SET_MATCHES", payload: json3 });
         } else {
-          setIsLoading(false);
+          // setIsLoading(false);
           console.log("failed");
         }
       }
@@ -249,7 +251,6 @@ export default function TMScene({
       allTMDispatch({ type: "EDIT_TM", payload: json });
       selectDispatch({ type: "UPDATE_TM", payload: json });
     }
-    console.log(selectedTourney, visPublic);
   };
 
   return (
