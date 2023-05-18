@@ -59,60 +59,62 @@ export default function MatchScene({sortedNames}) {
       const winner = names.find((name) => name._id === winnerName._id)
       const loser = names.find((name) => name._id === loserName._id)
 
+      // --------------------------------------------
+
       // update winner
-      const response1 = await fetch(process.env.REACT_APP_URL+'/api/participants/'+winner._id, {
+      const updateWinner = fetch(process.env.REACT_APP_URL+'/api/participants/'+winner._id, {
         method: 'PATCH',
         body: JSON.stringify({chip: winner.chip + Number(loserName.bet)}),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${user.token}`
         }
-      })
-      const json1 = await response1.json()
-      if (response1.ok){
-        dispatch({type: 'UPDATE_BOT', payload: json1})
-      }
+      });
       // update loser
-      const response2 = await fetch(process.env.REACT_APP_URL+'/api/participants/'+loser._id, {
+      const updateLoser = fetch(process.env.REACT_APP_URL+'/api/participants/'+loser._id, {
         method: 'PATCH',
         body: JSON.stringify({chip: loser.chip - Number(loserName.bet)}),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${user.token}`
         }
-      })
-      const json2 = await response2.json()
-      if (response2.ok){
-        dispatch({type: 'UPDATE_BOT', payload: json2})
-      }
-
+      });
       // add match to DB
-      const response3 = await fetch(process.env.REACT_APP_URL+'/api/matches', {
+      const addMatchToDB = await fetch(process.env.REACT_APP_URL+'/api/matches', {
         method: 'POST',
         body: JSON.stringify(newMatch),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${user.token}`
         }
-      })
-      const json3 = await response3.json()
+      });
 
-      if (!response3.ok){
-        alert(json3.error)
+      const [res1, res2, res3] = await Promise.all([updateWinner, updateLoser, addMatchToDB]);
+      const json1 = await res1.json();
+      const json2 = await res2.json();
+      const json3 = await res3.json();
+
+      if (res1.ok) {
+        dispatch({ type: 'UPDATE_BOT', payload: json1 });
       }
-      else {
-        matchDispatch({type: "ADD_MATCH", payload: json3})
-        // add match to the TM DB
-        const response4 = await fetch(process.env.REACT_APP_URL+'/api/tournaments/matches/'+selectedTourney._id, {
+      if (res2.ok) {
+        dispatch({ type: 'UPDATE_BOT', payload: json2 });
+      }
+      if (!res3.ok) {
+        alert(json3.error);
+      } else {
+        matchDispatch({ type: 'ADD_MATCH', payload: json3 });
+        // add the match to the tournament
+        const response4 = await fetch(process.env.REACT_APP_URL + '/api/tournaments/matches/' + selectedTourney._id, {
           method: 'POST',
           body: JSON.stringify(json3),
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.token}`
           }
-        })
-
+        });
       }
+      // --------------------------------------------
 
       setToggleState("na");
       setOutRed({_id:"", bet:0, result:""});
