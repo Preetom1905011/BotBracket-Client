@@ -58,6 +58,7 @@
   border-radius: 0.25rem;
   margin-top: 0.5rem;
   font-size: 1.2rem;
+  background-color: rgb(232, 232, 232);
   color: #6195f5;
   text-shadow: 2px 2px 2px rgb(210, 208, 208);
 }

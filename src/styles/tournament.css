@@ -53,6 +53,7 @@
   height: 3rem;
   border: none;
   border-radius: 0.75rem;
+  background-color: rgb(232, 232, 232);
 }
 .add-TM-bt:hover {
   box-shadow: 2px 2px 2px navy;

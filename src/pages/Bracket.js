@@ -15,6 +15,7 @@ export default function Bracket() {
   const { selectedTourney } = useSelectedTMContext();
 
   // Based on selectedTourney Type: display single, double, or Token Based Bracket
+  // const style = "Double";
 
   return (
     <div className="background-style-all">

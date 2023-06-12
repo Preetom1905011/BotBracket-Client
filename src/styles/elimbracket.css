@@ -17,6 +17,7 @@
 }
 .elim-bracket ul .game + li {
   flex-grow: 1;
+  background-color: tomato;
 }
 .elim-bracket ul .game {
   padding-left: 20px;

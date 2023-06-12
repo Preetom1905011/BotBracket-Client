@@ -98,8 +98,8 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
             onChange={(e) => setStyleTourney(e.target.value)}
           >
             <option value="Token">Token Based</option>
-            <option value="Single" >Single Elimination</option>
-            <option value="Double" >Double Elimination</option>
+            <option value="Single" disabled>Single Elimination (In Progress)</option>
+            <option value="Double" disabled>Double Elimination (In Progress)</option>
           </select>
         </div>
         <div className="add-TM-size">
