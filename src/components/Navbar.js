@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../styles/card.css";
 import logo from "../media/scrappyhead_sticker_purple2.png";
 import { useFeatureFetch } from "../hooks/useFeatureFetch";
+import SidePopUp from "../components/SidePopUp";
 
 
 export default function Navbar() {
@@ -61,6 +62,7 @@ export default function Navbar() {
         )}
         &nbsp;
       </ul>
+      <SidePopUp/>
     </div>
   );
 }

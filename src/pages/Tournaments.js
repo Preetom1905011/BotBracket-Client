@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TourneyList from "../components/TourneyList";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { CSSTransition } from "react-transition-group";
@@ -8,12 +8,15 @@ import "../styles/tournament.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Tournaments() {
+
   const { dispatch: selectDispatch } = useSelectedTMContext();
   const [allowAddTM, setAllowAddTM] = useState(true);
   const [showTMForm, setShowTMForm] = useState(false);
   const [error, setError] = useState(null);
   const [visPublic, setVisPublic] = useState(false);
   const { user } = useAuthContext();
+
+  const [bgColor, setBgColor] = useState(localStorage.getItem('theme') || "");
 
   const handleAllowAddTM = (e) => {
     e.preventDefault();
@@ -30,8 +33,9 @@ export default function Tournaments() {
     });
   };
 
+
   return (
-    <div className="background-style-all">
+    <div className="background-style-all" style={{backgroundColor: bgColor}}>
       <div className="side-grid-main">
         <CSSTransition appear in classNames="TMList-transition" timeout={350}>
           <div className="card-body TM-card-body">

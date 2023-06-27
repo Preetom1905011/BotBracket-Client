@@ -10,6 +10,7 @@ import { CSSTransition } from "react-transition-group";
 import Footer from '../components/Footer';
 
 export default function Roster() {
+
   const [input, setInput] = useState({});
   const [sortedNames, setSortedNames] = useState([]);
   const [error, setError] = useState(null);
@@ -19,6 +20,7 @@ export default function Roster() {
   const [selectedBot, setSelectedBot] = useState(null);
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext();
+  const [bgColor, setBgColor] = useState(localStorage.getItem('theme') || "");
 
   const handleAllowAdd = (e) => {
 
@@ -42,7 +44,7 @@ export default function Roster() {
   };
 
   return (
-    <div className="background-style-all">
+    <div className="background-style-all" style={{backgroundColor: bgColor}}>
       <div className="side-grid-main">
         <CSSTransition
           appear
