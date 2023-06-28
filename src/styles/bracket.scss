@@ -39,6 +39,7 @@ $list-color2: #8a2be2;
 
 .menu.open {
   transform: translateX(0);
+  box-shadow: -2px 0px 5px  $main-color;
 }
 
 .menu-button {
@@ -47,10 +48,14 @@ $list-color2: #8a2be2;
   right: 2px;
   z-index: 1;
   transform: translateX(0) scale(2);
+  padding: 1.5px;
   background-color: rgb(202, 140, 249);
   border-radius: 2px;
   color: $main-color;
   transition: transform 0.3s ease-in-out;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .menu-button.open {
@@ -80,6 +85,7 @@ $list-color2: #8a2be2;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
   justify-content: space-between;
   padding: 1rem;
 
@@ -88,4 +94,37 @@ $list-color2: #8a2be2;
 
   border: 2px solid $list-color2;
   border-radius: 1rem;
+}
+
+.faq-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+
+  h3{
+    width: 80%;
+    text-align: center;
+    border-bottom: 2px solid $main-color;
+    color: $main-color;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+  }
+
+  // background-color: red;
+  ul{
+    flex-direction: column;
+
+    h5{
+      font-weight: bold;
+      color: $main-color;
+      letter-spacing: 1.2px;
+    }
+    li{
+      // background-color: #8a2be2;
+      padding-left: 0.75rem;
+      padding-bottom: 1rem;
+      color: $list-color2;
+    }
+  }
 }

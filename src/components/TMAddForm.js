@@ -5,7 +5,7 @@ import { useTMContext } from "../hooks/useTMContext";
 import { useMatchesContext } from "../hooks/useMatchContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 
-export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
+export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm, isLoading, setIsLoading }) {
   const [inputTourney, setInputTourney] = useState({ name: "", _id: "" });
   const [styleTourney, setStyleTourney] = useState("Token");
   const [sizeTourney, setSizeTourney] = useState(48);
@@ -19,7 +19,7 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
   const handleAddConfirm = async (e) => {
     e.preventDefault();
 
-    console.log(styleTourney, sizeTourney);
+    setIsLoading(true);
 
     // add Tournament to DB
     const newTourney = {
@@ -63,6 +63,7 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
       setShowTMForm(false);
       setError(null);
     }
+    setIsLoading(false);
   };
 
   const handleCancel = (e) => {
@@ -117,8 +118,8 @@ export default function TMAddForm({ setError, setAllowAddTM, setShowTMForm }) {
           </select>)}
         </div>
         <div className="button-box-TM">
-          <button type="submit">Add</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button type="submit" disabled={isLoading}>Add</button>
+          <button onClick={handleCancel} disabled={isLoading}>Cancel</button>
         </div>
       </form>
     </div>

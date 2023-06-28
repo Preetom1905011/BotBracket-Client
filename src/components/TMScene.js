@@ -160,7 +160,7 @@ export default function TMScene({
     if (!user) {
       return;
     }
-
+    setIsLoading(true);
     if (popup.show && popup.id) {
       const response = await fetch(
         process.env.REACT_APP_URL + "/api/tournaments/" + popup.id,
@@ -218,6 +218,8 @@ export default function TMScene({
       );
       const json3 = await response3.json();
     }
+
+    setIsLoading(false);
   };
 
   // This will just hide the Confirmation Box when user clicks "No"/"Cancel"
@@ -359,12 +361,14 @@ export default function TMScene({
                     <button
                       className="check-button TM-check-cancel"
                       onClick={handleDeleteTrue}
+                      disabled={isLoading}
                     >
                       Confirm
                     </button>
                     <button
                       className="cancel-button TM-check-cancel"
                       onClick={handleDeleteFalse}
+                      disabled={isLoading}
                     >
                       Cancel
                     </button>
@@ -375,7 +379,7 @@ export default function TMScene({
           </div>
         </div>
       ) : (
-        <TMAddForm setError={setError} setAllowAddTM={setAllowAddTM} setShowTMForm={setShowTMForm}/>
+        <TMAddForm setError={setError} setAllowAddTM={setAllowAddTM} setShowTMForm={setShowTMForm} isLoading={isLoading} setIsLoading={setIsLoading}/>
       )}
       {isLoading && <div className="feature-loader">
                       <img src={loadScrappy}/>

@@ -36,6 +36,7 @@
 
 .menu.open {
   transform: translateX(0);
+  box-shadow: -2px 0px 5px #00375e;
 }
 
 .menu-button {
@@ -44,10 +45,14 @@
   right: 2px;
   z-index: 1;
   transform: translateX(0) scale(2);
+  padding: 1.5px;
   background-color: rgb(202, 140, 249);
   border-radius: 2px;
   color: #00375e;
   transition: transform 0.3s ease-in-out;
+}
+.menu-button:hover {
+  cursor: pointer;
 }
 
 .menu-button.open {
@@ -75,10 +80,39 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
   justify-content: space-between;
   padding: 1rem;
   font-size: 1.2rem;
   color: #8a2be2;
   border: 2px solid #8a2be2;
   border-radius: 1rem;
+}
+
+.faq-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+.faq-block h3 {
+  width: 80%;
+  text-align: center;
+  border-bottom: 2px solid #00375e;
+  color: #00375e;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.faq-block ul {
+  flex-direction: column;
+}
+.faq-block ul h5 {
+  font-weight: bold;
+  color: #00375e;
+  letter-spacing: 1.2px;
+}
+.faq-block ul li {
+  padding-left: 0.75rem;
+  padding-bottom: 1rem;
+  color: #8a2be2;
 }/*# sourceMappingURL=bracket.css.map */

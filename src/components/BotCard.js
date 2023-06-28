@@ -6,7 +6,7 @@ import "../styles/roster.css";
 import "../styles/card.css";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-export default function BotCard({ selectedBot, setSelectedBot }) {
+export default function BotCard({ selectedBot, setSelectedBot, isLoading, setIsLoading }) {
   const { names, dispatch } = useBotsContext();
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext()
@@ -80,7 +80,7 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
       return
     }
     // reset the selected bot
-    setSelectedBot(null);
+    setIsLoading(true);
     if (popup.show && popup.id) {
 
       const response = await fetch(
@@ -116,6 +116,8 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
       });
     }
     setEditing({ allowEdit: true, id: null });
+    setIsLoading(false);
+    setSelectedBot(null);
   };
 
   // This will just hide the Confirmation Box when user clicks "No"/"Cancel"
@@ -250,6 +252,7 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
             <button
               className="TM-del-bt"
               onClick={() => handleDelete(selectedBot)}
+              disabled={isLoading}
             >
               Delete Bot
             </button>
@@ -261,12 +264,14 @@ export default function BotCard({ selectedBot, setSelectedBot }) {
                   <button
                     className="check-button TM-check-cancel"
                     onClick={handleDeleteTrue}
+                    disabled={isLoading}
                   >
                     Confirm
                   </button>
                   <button
                     className="cancel-button TM-check-cancel"
                     onClick={handleDeleteFalse}
+                    disabled={isLoading}
                   >
                     Cancel
                   </button>
