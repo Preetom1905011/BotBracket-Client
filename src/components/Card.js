@@ -4,7 +4,7 @@ import { useBotsContext } from "../hooks/useBotContext";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-export default function Card({ input, setInput, sortedNames, setSortedNames }) {
+export default function Card({ input, setInput, sortedNames, setSortedNames, bgColor }) {
   const { names, dispatch } = useBotsContext();
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext();
@@ -54,7 +54,8 @@ export default function Card({ input, setInput, sortedNames, setSortedNames }) {
 
   return (
     <>
-      <div className="card-body ">
+      {/* <div className="card-body " style={{backgroundColor: bgColor === "" ? "#ffffff" : "#ffffff80"}}> */}
+      <div className="card-body">
         <h2>Leaderboard</h2>
         <div className="scroll-box">
           {sortedNames.map((name) => (

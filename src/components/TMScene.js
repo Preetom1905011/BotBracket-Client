@@ -18,6 +18,7 @@ export default function TMScene({
   showTMForm,
   setShowTMForm,
   setError,
+  bgColor
 }) {
   const { names, dispatch } = useBotsContext();
   const { selectedTourney, dispatch: selectDispatch } = useSelectedTMContext();
@@ -309,7 +310,7 @@ export default function TMScene({
             <h3>Match History</h3>
           </div>
           <div className="TM-grid scroll">
-            <div className="TM-leaderboard">
+            <div className="TM-leaderboard" style={{backgroundColor: bgColor}}>
               {sortedNames.map((name) => (
                 <li className="TM-leader-list container" key={name._id}>
                   {name.title}
@@ -317,7 +318,7 @@ export default function TMScene({
                 </li>
               ))}
             </div>
-            <div className="TM-matchHist">
+            <div className="TM-matchHist" style={{backgroundColor: bgColor}}>
               {matches.map((match) => (
                 <li className="match-hist-list TM-hist-list" key={match._id}>
                   <div

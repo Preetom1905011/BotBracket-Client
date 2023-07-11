@@ -68,6 +68,7 @@ export default function Tournaments() {
             showTMForm={showTMForm}
             setShowTMForm={setShowTMForm}
             setError={setError}
+            bgColor={bgColor}
           />
         </CSSTransition>
       </div>

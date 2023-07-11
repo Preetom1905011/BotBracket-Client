@@ -8,6 +8,8 @@ $win-color: rgb(174, 200, 123);
 $TM-list-color: rgb(16, 180, 27);
 $match-list-font: rgb(9, 89, 9);
 
+$test: #ffffff80;
+
 .column-grid {
     align-content: center;
     display: flex;
@@ -66,6 +68,8 @@ $match-list-font: rgb(9, 89, 9);
     display: flex;
     justify-content: space-evenly;
 
+    background-color: white;
+
     &:nth-of-type(odd) {
         margin-left: 5vw;
         box-shadow: 5px 5px 5px $main-color;
@@ -92,6 +96,7 @@ $match-list-font: rgb(9, 89, 9);
 
     &:hover{
         color: rgb(157, 153, 153);
+        cursor: pointer;
     }
 }
 

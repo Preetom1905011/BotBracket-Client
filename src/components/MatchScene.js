@@ -11,7 +11,7 @@ import { useMatchesContext } from '../hooks/useMatchContext';
 import {useSelectedTMContext} from '../hooks/useSelectedTMContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
-export default function MatchScene({sortedNames}) {
+export default function MatchScene({sortedNames, bgColor}) {
 
   const {names, dispatch} = useBotsContext()
   const {matches, dispatch: matchDispatch} = useMatchesContext()
@@ -152,7 +152,7 @@ export default function MatchScene({sortedNames}) {
 
 
   return (
-    <div className='backdrop'>
+    <div className='backdrop' style={{backgroundColor: bgColor}}>
         <Timer 
             toggleState={toggleState} 
             setToggleState={setToggleState}

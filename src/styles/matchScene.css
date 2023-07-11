@@ -50,6 +50,7 @@
   align-content: center;
   display: flex;
   justify-content: space-evenly;
+  background-color: white;
 }
 .matchCard:nth-of-type(odd) {
   margin-left: 5vw;
@@ -75,6 +76,7 @@
 }
 .plus-button:hover {
   color: rgb(157, 153, 153);
+  cursor: pointer;
 }
 
 .fighter-select {

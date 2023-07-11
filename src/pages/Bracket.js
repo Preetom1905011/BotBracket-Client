@@ -30,6 +30,7 @@ export default function Bracket() {
               setInput={setInput}
               sortedNames={sortedNames}
               setSortedNames={setSortedNames}
+              bgColor={bgColor}
             ></Card>
           </CSSTransition>
         </span>
@@ -39,7 +40,7 @@ export default function Bracket() {
           classNames="matchScene-transition"
           timeout={350}
         >
-          <MatchScene sortedNames={sortedNames}></MatchScene>
+          <MatchScene sortedNames={sortedNames} bgColor={bgColor}></MatchScene>
         </CSSTransition>
       </div>}
 
