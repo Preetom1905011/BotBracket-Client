@@ -12,6 +12,7 @@ export default function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
   const navigate = useNavigate();
+  const pathname = window.location.pathname;
 
   const {fetchFeaturedTMs, allPubTMs, allUsers, isFetching} = useFeatureFetch();
 

@@ -9,7 +9,7 @@ $delete-color:#E31C25;
 
 
 .card-body{
-    max-width: 28rem;
+    // max-width: 28rem;
     height: 80rem;
     align-self: left;
 
@@ -29,11 +29,10 @@ $delete-color:#E31C25;
         font-size: 2rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
-        margin-left: 7rem;
-        margin-right: 7rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
         
-        align-items: center;
-        justify-content: space-around;
+        text-align: center;
 
     }
 }
@@ -136,7 +135,7 @@ $delete-color:#E31C25;
 
 
 .list-item {
-    width: 23.5rem;
+    width: 95%;
     height: 3rem;
 
     margin-top: 0.5rem;

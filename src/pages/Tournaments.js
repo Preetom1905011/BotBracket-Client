@@ -36,7 +36,7 @@ export default function Tournaments() {
 
   return (
     <div className="background-style-all" style={{backgroundColor: bgColor}}>
-      <div className="side-grid-main">
+      <div className="TM-layout">
         <CSSTransition appear in classNames="TMList-transition" timeout={350}>
           <div className="card-body TM-card-body">
             <h2>Tournaments</h2>

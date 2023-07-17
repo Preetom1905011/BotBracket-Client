@@ -1,5 +1,4 @@
 .card-body {
-  max-width: 28rem;
   height: 80rem;
   align-self: left;
   box-shadow: 5px 0px 5px #00375e;
@@ -14,10 +13,9 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  margin-left: 7rem;
-  margin-right: 7rem;
-  align-items: center;
-  justify-content: space-around;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
 }
 
 .side-grid-main {
@@ -97,7 +95,7 @@
 }
 
 .list-item {
-  width: 23.5rem;
+  width: 95%;
   height: 3rem;
   margin-top: 0.5rem;
   margin-right: 1rem;

@@ -14,7 +14,6 @@
 
 .backdrop {
   position: inherit;
-  width: 65vw;
   min-height: 75rem;
   border: 0.1rem solid rgb(210, 208, 208);
   border-radius: 1rem;

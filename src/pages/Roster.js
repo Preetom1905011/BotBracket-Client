@@ -45,7 +45,7 @@ export default function Roster() {
 
   return (
     <div className="background-style-all" style={{backgroundColor: bgColor}}>
-      <div className="side-grid-main">
+      <div className="roster-layout">
         <CSSTransition
           appear
           in
