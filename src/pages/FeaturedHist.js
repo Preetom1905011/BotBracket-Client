@@ -15,7 +15,7 @@ export default function FeaturedHist() {
 
   return (
     <div className="background-style-all">
-      <div className="side-grid-main">
+      <div className="featured-indv-layout">
         <CSSTransition
           appear
           in

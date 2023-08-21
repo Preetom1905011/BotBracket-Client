@@ -1,5 +1,9 @@
+.roster-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 2.85fr;
+}
+
 .roster-bg {
-  width: 65vw;
   min-height: 75rem;
   margin-top: 2.5rem;
   margin-bottom: 2rem;
@@ -50,7 +54,7 @@
 .allow-roster-bt {
   margin-left: 0.5rem;
   margin-bottom: 2rem;
-  width: 25rem;
+  width: 95%;
   height: 3rem;
   background-color: rgb(232, 232, 232);
   border: none;
@@ -62,7 +66,7 @@
 }
 
 .label-roster {
-  width: 25rem;
+  width: 95%;
   height: 3rem;
   border: none;
   border-radius: 0.75rem;

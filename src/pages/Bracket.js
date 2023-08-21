@@ -22,7 +22,7 @@ export default function Bracket() {
   return (
     <div className="background-style-all" style={{backgroundColor: bgColor}}>
       {selectedTourney.style === "Double"? <ElimBracket/>:
-      <div className="side-grid-main">
+      <div className="bracket-layout">
         <span>
           <CSSTransition appear in classNames="card-transition" timeout={350}>
             <Card

@@ -1,5 +1,5 @@
-$main-color:#00375e;
-$list-color2:#8a2be2;
+$main-color: #00375e;
+$list-color2: #8a2be2;
 $bot1-color: #0f0fa9;
 $bot2-color: #7f3fff;
 $TM-bg-color: rgb(195, 232, 255);
@@ -10,436 +10,437 @@ $nav-color: #00375e;
 $border-color: rgb(210, 208, 208);
 $match-list-font: rgb(9, 89, 9);
 
-
-.TM-card-body{
-    box-shadow: 5px 0px 5px $nav-color;
+.TM-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 2.85fr;
 }
 
-.TM-scroll-box{
-    height: 86%;
-    margin-bottom: none;
-    overflow-y: scroll;
-    overflow-x: hidden
+.TM-card-body {
+  box-shadow: 5px 0px 5px $nav-color;
+}
+
+.TM-scroll-box {
+  height: 86%;
+  margin-bottom: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .TM-edit-form {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 .tournament-edit-input {
-    width: 35rem;
-    background-color: rgb(241, 235, 235);
-    border: none;
-    border-radius: 0.5rem;
+  width: 35rem;
+  background-color: rgb(241, 235, 235);
+  border: none;
+  border-radius: 0.5rem;
 
-    margin-right: 1.25rem;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
-    padding: 0.25rem 0.75rem;
+  margin-right: 1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  padding: 0.25rem 0.75rem;
 
-    text-align: center;
+  text-align: center;
 
-    font-size: 2.2rem;
-    color: rgb(0, 0, 0);
+  font-size: 2.2rem;
+  color: rgb(0, 0, 0);
 }
 
-.TM-sv{
-    width: 3rem;
-    height: 3rem;
-    color: $TM-bg-color;
-    &:hover{
-        color: green;
-    }
+.TM-sv {
+  width: 3rem;
+  height: 3rem;
+  color: $TM-bg-color;
+  &:hover {
+    color: green;
+  }
 }
 
 .TM-edit {
-    color: $TM-bg-color;
-    width: 2rem;
-    height: 2rem;
-    &:hover{
-        color: $bot2-color;
-    }
+  color: $TM-bg-color;
+  width: 2rem;
+  height: 2rem;
+  &:hover {
+    color: $bot2-color;
+  }
 }
 
 .add-TM-bt {
-    width: 25rem;
-    height: 3rem;
+  width: 100%;
+  height: 3rem;
 
-    border: none;
-    border-radius: 0.75rem;
+  border: none;
+  border-radius: 0.75rem;
 
-    background-color: rgb(232, 232, 232);
+  background-color: rgb(232, 232, 232);
 
-    &:hover{
-        box-shadow: 2px 2px 2px navy;
-        color: navy;
-    }
+  &:hover {
+    box-shadow: 2px 2px 2px navy;
+    color: navy;
+  }
 }
 
 .add-TM-label {
-    width: 25rem;
-    height: 3rem;
+  // width: 25rem;
+  height: 3rem;
 
-    margin-top: 0.5rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-    margin-bottom: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 3rem;
 }
 .add-TM-form {
-    width: 99%;
-    height: 22rem;
+  width: 99%;
+  height: 22rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    // background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // background-color: tomato;
 
-    margin-top: 3.5rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-    margin-bottom: 3rem;
+  margin-top: 3.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 3rem;
 
-    button{
-        width: 10rem;
-        height: 2.5rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-        border: none;
-        border-radius: 0.25rem;
-        box-shadow: 1px 1px 1px lawngreen;
-        margin-left: 0.05rem;
-
-        &:hover{
-            box-shadow: 2px 2px 2px lawngreen;
-            color: green;
-        }
-    }
-}
-
-.label-TM{
-    background-color: rgb(192, 192, 247);
-}
-
-
-.add-TM-input{
-    width: 42rem;
+  button {
+    width: 10rem;
     height: 2.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 1px lawngreen;
+    margin-left: 0.05rem;
 
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-content: space-around;
+    &:hover {
+      box-shadow: 2px 2px 2px lawngreen;
+      color: green;
+    }
+  }
+}
 
-    input{
-        width: 25rem;
-        height: 2.5rem;
-        font-size: 1.3rem;
-        border: 0.1rem solid rgb(192, 192, 247);
-        border-radius: 0.25rem;
-        padding: 1rem 1rem;  
-        color: rgb(46, 46, 117);
-    }
-    label {
-        font-size: 1.6rem;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 0.2rem;
-        color: rgb(46, 46, 117);
-    }
+.label-TM {
+  width: 98%;
+  background-color: rgb(192, 192, 247);
+}
+
+.add-TM-input {
+  width: 42rem;
+  height: 2.5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-around;
+
+  input {
+    width: 25rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    border: 0.1rem solid rgb(192, 192, 247);
+    border-radius: 0.25rem;
+    padding: 1rem 1rem;
+    color: rgb(46, 46, 117);
+  }
+  label {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.2rem;
+    color: rgb(46, 46, 117);
+  }
 }
 
 .add-TM-style {
-    width: 26rem;
+  width: 26rem;
+  height: 2rem;
+  // background-color: red;
+  label {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.5rem;
+    color: rgb(46, 46, 117);
+  }
+  select {
+    width: 13rem;
     height: 2rem;
-    // background-color: red;
-    label {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 0.5rem;
-        color: rgb(46, 46, 117);
-    }
-    select {
-        width: 13rem;
-        height: 2rem;
-        font-size: 1.1rem;
-        border: 0.1rem solid rgb(192, 192, 247);
-        border-radius: 0.25rem;  
-        color: rgb(46, 46, 117);
-        padding-left: 0.5rem;
-    }
+    font-size: 1.1rem;
+    border: 0.1rem solid rgb(192, 192, 247);
+    border-radius: 0.25rem;
+    color: rgb(46, 46, 117);
+    padding-left: 0.5rem;
+  }
 }
 
-.add-TM-size{
-    width: 18rem;
+.add-TM-size {
+  width: 18rem;
+  height: 2rem;
+  // background-color: red;
+  label {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0.5rem;
+    color: rgb(46, 46, 117);
+  }
+  select {
+    width: 4rem;
     height: 2rem;
-    // background-color: red;
-    label {
-        font-size: 1.3rem;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 0.5rem;
-        color: rgb(46, 46, 117);
-    }
-    select {
-        width: 4rem;
-        height: 2rem;
-        font-size: 1.1rem;
-        border: 0.1rem solid rgb(192, 192, 247);
-        border-radius: 0.25rem;  
-        color: rgb(46, 46, 117);
-        padding-left: 0.5rem;
-    }
+    font-size: 1.1rem;
+    border: 0.1rem solid rgb(192, 192, 247);
+    border-radius: 0.25rem;
+    color: rgb(46, 46, 117);
+    padding-left: 0.5rem;
+  }
 }
-.button-box-TM{
-    margin-top: 3rem;
+.button-box-TM {
+  margin-top: 3rem;
 }
-
 
 .TM-list-item {
-    width: 23.5rem;
-    height: 3rem;
+  width: 95%;
+  height: 3rem;
 
-    margin-top: 0.5rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
 
-    font-size: 1.1rem;
-    padding: .5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
 
-    background-color: rgb(120, 120, 217);
-    color: midnightblue;
-    border-radius: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
 
-    box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgb(120, 120, 217);
+  color: midnightblue;
+  border-radius: 0.5rem;
 
-    &:hover{
-        background-color: $main-color;
-        box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
-        color: white;
-        transform: translateX(0.5rem);
-    }
+  box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: $main-color;
+    box-shadow: inset 0 2px 4px rgb(255, 254, 254),
+      5px 5px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    transform: translateX(0.5rem);
+  }
 }
 
 .TM-list-item-selected {
-    color: white;
-    background-color: $main-color;
-    box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
-    transform: translateX(0.5rem);
+  color: white;
+  background-color: $main-color;
+  box-shadow: inset 0 2px 4px rgb(255, 254, 254), 5px 5px 2px rgba(0, 0, 0, 0.2);
+  transform: translateX(0.5rem);
 }
 
 .TM-scene {
-    width: 65vw;
-    max-height: 75rem;
-    border: 1px solid $border-color;
-    border-radius: 1rem;
-    box-shadow: 5px 5px 5px $TM-shadow;
-    background-color: white;
+  // width: 65vw;
+  max-height: 75rem;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px $TM-shadow;
+  background-color: white;
 
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
 
-    h2 {
-        padding: 2rem 1rem;
-        text-align: center;
-        font-size: 2.2rem;
-    }
+  h2 {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+  }
 }
 
 .TM-header {
-    width: 100%;
-    height: 6rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
 
-    background-color: rgb(120, 120, 217);
-    color: $main-color;
-    border: none;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+  background-color: rgb(120, 120, 217);
+  color: $main-color;
+  border: none;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 
 .TM-details {
-    height: 95%;
-    h3{
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+  height: 95%;
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 .TM-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .TM-leaderboard {
-    padding: 0.75rem 0.1rem;
-    background-color: $TM-bg-color;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
+  padding: 0.75rem 0.1rem;
+  background-color: $TM-bg-color;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
 
-    border-radius: 0.5rem;
-
+  border-radius: 0.5rem;
 }
 .TM-matchHist {
-    padding: 0.75rem 0.1rem;
-    background-color: $TM-bg-color;
-    margin-left: 1rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
+  padding: 0.75rem 0.1rem;
+  background-color: $TM-bg-color;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .TM-hist-list {
-    width: 97%;
-    margin-bottom: 0.5rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
+  width: 97%;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 .TM-scene-bottom {
-    height: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .TM-popup {
-    width: auto;
-    height: 3rem;
-    margin-left: auto;
-    margin-right: auto;
+  width: auto;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
 
-    font-size: 1.5rem;
-    color: rgb(238, 14, 14);
-    text-shadow: 0 0 2px #f9cd5e, 0 0 2px #fffdfd;
+  font-size: 1.5rem;
+  color: rgb(238, 14, 14);
+  text-shadow: 0 0 2px #f9cd5e, 0 0 2px #fffdfd;
 
-    background-color: rgb(215, 213, 213);
+  background-color: rgb(215, 213, 213);
 }
 
 .TM-check-cancel {
-    width: 5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    margin-top: auto;
-    margin-bottom: auto;
+  width: 5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .TM-del-bt {
-    width: 15rem;
-    height: 3rem;
+  width: 15rem;
+  height: 3rem;
 
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 
-    background-color: rgb(231, 220, 220);
+  background-color: rgb(231, 220, 220);
 
-    border: none;
-    border-radius: 0.25rem;
-    box-shadow: 1px 1px 1px red;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 1px red;
 
-    color: black;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    &:disabled{
-        background-color: rgb(212, 208, 208);
-        box-shadow: none;
-        color: rgb(162, 157, 157);
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  &:disabled {
+    background-color: rgb(212, 208, 208);
+    box-shadow: none;
+    color: rgb(162, 157, 157);
 
-        &:hover{
-            background-color: rgb(212, 208, 208);
-            box-shadow: none;
-            color: rgb(162, 157, 157);
-            text-shadow: none;
-        }
-
+    &:hover {
+      background-color: rgb(212, 208, 208);
+      box-shadow: none;
+      color: rgb(162, 157, 157);
+      text-shadow: none;
     }
-    &:hover{
-        background-color: red;
-        text-shadow: 2px 2px 2px rgb(224, 201, 201);
-        box-shadow: 3px 3px 3px rgb(255, 255, 255);
-        color: rgb(255, 255, 255);
-    }
+  }
+  &:hover {
+    background-color: red;
+    text-shadow: 2px 2px 2px rgb(224, 201, 201);
+    box-shadow: 3px 3px 3px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+  }
 }
 
 .lock-icon {
-    color: $TM-shadow;
-    margin-top: auto;
-    margin-bottom: 0.25rem;
-    margin-left: 1rem;
-    width: 2rem;
-    height: 1.8rem;
-    &:hover{
-        color: $bot2-color;
-    }
+  color: $TM-shadow;
+  margin-top: auto;
+  margin-bottom: 0.25rem;
+  margin-left: 1rem;
+  width: 2rem;
+  height: 1.8rem;
+  &:hover {
+    color: $bot2-color;
+  }
 }
 
-
 .TM-leader-list {
-    width: 95%;
-    height: 3rem;
+  width: 95%;
+  height: 3rem;
 
-    margin-bottom: 0.5rem;
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
 
-    font-size: 1.1rem;
-    padding: .5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
 
-    color: white;
-    border-radius: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
 
-    box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 0.5rem;
 
-    &:nth-of-type(odd) {
-        background-color: $bot1-color;
-    }
-    &:nth-of-type(even) {
-        background-color: $bot2-color;
-    }
+  box-shadow: inset 0 2px 4px lightgray, 5px 5px 2px rgba(0, 0, 0, 0.2);
+
+  &:nth-of-type(odd) {
+    background-color: $bot1-color;
+  }
+  &:nth-of-type(even) {
+    background-color: $bot2-color;
+  }
 }
 
 // Animation
-.TMList-transition-appear{
-    transition: transform 350ms ease-in;
-    transform: translateX(-100%);
+.TMList-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(-100%);
 }
 
-.TMList-transition-appear-active{
-    transform: translateX(0);
+.TMList-transition-appear-active {
+  transform: translateX(0);
 }
 
 .TMScene-transition-appear {
-    transition: transform 350ms ease-in;
-    transform: translateX(100%);
+  transition: transform 350ms ease-in;
+  transform: translateX(100%);
 }
 
 .TMScene-transition-appear-active {
-    transform: translateX(0);
+  transform: translateX(0);
 }

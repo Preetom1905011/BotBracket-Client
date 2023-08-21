@@ -1,19 +1,6 @@
-.card-transition-appear {
-  transition: transform 350ms ease-in;
-  transform: translateX(-100%);
-}
-
-.card-transition-appear-active {
-  transform: translateX(0);
-}
-
-.matchScene-transition-appear {
-  transition: transform 350ms ease-in;
-  transform: translateX(100%);
-}
-
-.matchScene-transition-appear-active {
-  transform: translateX(0);
+.bracket-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 2.85fr;
 }
 
 .menu-container {
@@ -115,4 +102,22 @@
   padding-left: 0.75rem;
   padding-bottom: 1rem;
   color: #8a2be2;
+}
+
+.card-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(-100%);
+}
+
+.card-transition-appear-active {
+  transform: translateX(0);
+}
+
+.matchScene-transition-appear {
+  transition: transform 350ms ease-in;
+  transform: translateX(100%);
+}
+
+.matchScene-transition-appear-active {
+  transform: translateX(0);
 }/*# sourceMappingURL=bracket.css.map */
