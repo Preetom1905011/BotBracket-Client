@@ -25,11 +25,11 @@ export default function Home() {
           <h3>to Mechanized Mayhem</h3>
           <Link to={!user? '/login': '/tournaments'}><button >Get Started</button></Link>
         </div>
-        <img src={home_img}/>
+        <img src={home_img} alt='logo'/>
       </div>
 
       <div className='intro'>
-        <img src={scrappy_sticker}/>
+        <img src={scrappy_sticker} alt='happy-scrappy'/>
         <div className='intro-text'>
           <h2>What is BotBracket?</h2>
           <h3> Well, Hello there, fellow stranger. The name's Scrappy. You're here which means you must love 
@@ -60,13 +60,13 @@ export default function Home() {
         </div>
         <div className='img-box'>
           <div className='container'>
-            <img src={ccr_img2} className="img-right-shift"/>
-            <img src={ccr_img4} className="img-right-shift img3-height"/>
+            <img src={ccr_img2} className="img-right-shift" alt='combatting-robots'/>
+            <img src={ccr_img4} className="img-right-shift img3-height" alt='combatting-robots'/>
           </div>
-          <img src={ccr_img1} className="img-left-shift"/>
+          <img src={ccr_img1} className="img-left-shift" alt='combatting-robots'/>
           <div className='container'>
-            <img src={ccr_img5} className="img-right-shift"/>
-            <img src={ccr_img3} className="img-right-shift img3-height"/>
+            <img src={ccr_img5} className="img-right-shift" alt='combatting-robots'/>
+            <img src={ccr_img3} className="img-right-shift img3-height" alt='combatting-robots'/>
           </div>
         </div>
       </div>

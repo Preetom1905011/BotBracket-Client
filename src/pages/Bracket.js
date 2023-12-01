@@ -14,7 +14,7 @@ export default function Bracket() {
   const [input, setInput] = useState({});
   const [sortedNames, setSortedNames] = useState([]);
   const { selectedTourney } = useSelectedTMContext();
-  const [bgColor, setBgColor] = useState(localStorage.getItem('theme') || "");
+  const [bgColor] = useState(localStorage.getItem('theme') || "");
 
   // Based on selectedTourney Type: display single, double, or Token Based Bracket
   // const style = "Double";

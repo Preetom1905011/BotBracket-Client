@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TourneyList from "../components/TourneyList";
 import { useSelectedTMContext } from "../hooks/useSelectedTMContext";
 import { CSSTransition } from "react-transition-group";
@@ -16,7 +16,7 @@ export default function Tournaments() {
   const [visPublic, setVisPublic] = useState(false);
   const { user } = useAuthContext();
 
-  const [bgColor, setBgColor] = useState(localStorage.getItem('theme') || "");
+  const [bgColor] = useState(localStorage.getItem('theme') || "");
 
   const handleAllowAddTM = (e) => {
     e.preventDefault();

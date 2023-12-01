@@ -23,6 +23,7 @@ export default function MatchScene({sortedNames, bgColor}) {
   const [toggleState, setToggleState] = useState('na');
   const [reset, setReset] = useState(false);
   const [timerState, setTimerState] = useState("reset");
+  const [isTimerStarted, setIsTimerStarted] = useState(false);
 
   // to prevent same bots being chosen 
   const [fightersDuo, setFightersDuo] = useState([]);
@@ -160,7 +161,10 @@ export default function MatchScene({sortedNames, bgColor}) {
             setTimerState={setTimerState}
             reset={reset} 
             outRed={outRed} 
-            outBlue={outBlue}></Timer>
+            outBlue={outBlue}
+            isTimerStarted={isTimerStarted}
+            setIsTimerStarted={setIsTimerStarted}
+            ></Timer>
         <div className='side-grid'>
           <MatchCard 
               reset={reset}
@@ -174,6 +178,7 @@ export default function MatchScene({sortedNames, bgColor}) {
               select_style={"fighter-select"} 
               confirm_style={"fighter-confirmed"}
               scrappy={scrappyRed}></MatchCard>
+
           <img src={vs_logo} className="vs_img"/>
           <MatchCard 
               reset={reset}

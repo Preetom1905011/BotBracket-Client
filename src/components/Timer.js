@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/timer.css';
+import Countdown from '../components/Countdown';
 
 export default function Timer(props) {
-    const {toggleState, setToggleState, timerState, setTimerState, reset, outRed, outBlue} = props;
+    const {toggleState, setToggleState, timerState, setTimerState, reset, outRed, outBlue, isTimerStarted, setIsTimerStarted} = props;
 
     const [time, setTime] = useState({minutes: "03", seconds: "00"});
     const [counter, setCounter] = useState(0);
@@ -30,10 +31,14 @@ export default function Timer(props) {
     }, [reset])
 
     const startTimer = () => {
-        if ((time.minutes > 0 || time.seconds >> 0)){
-            setTimerState("start"); 
-        }
-        setCounter(Number(time.minutes) * 60 + Number(time.seconds));
+        setIsTimerStarted(!isTimerStarted)
+
+        setTimeout(() => {
+            if (time.minutes > 0 || time.seconds > 0) {
+                setTimerState("start");
+            }
+            setCounter(Number(time.minutes) * 60 + Number(time.seconds));
+        }, 4000);
     }
     const pauseTimer = () => {
         setTimerState("pause"); 
@@ -91,6 +96,9 @@ export default function Timer(props) {
             <button 
                 className='timer-bt' 
                 onClick={resetTimer}>Reset</button>
+            <Countdown isTimerStarted={isTimerStarted} setIsTimerStarted={setIsTimerStarted}/>
+          
+
         </div>
     )
 }

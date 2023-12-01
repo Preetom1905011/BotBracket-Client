@@ -20,7 +20,7 @@ export default function Roster() {
   const [selectedBot, setSelectedBot] = useState(null);
   const { selectedTourney } = useSelectedTMContext();
   const {user} = useAuthContext();
-  const [bgColor, setBgColor] = useState(localStorage.getItem('theme') || "");
+  const [bgColor] = useState(localStorage.getItem('theme') || "");
 
   const handleAllowAdd = (e) => {
 
