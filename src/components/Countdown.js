@@ -10,7 +10,7 @@ const Countdown = ({ isTimerStarted, setIsTimerStarted }) => {
 
   const props = useSpring({
     opacity: animate ? 1 : 0,
-    fontSize: animate ? '14rem' : '0rem',
+    fontSize: animate ? '12rem' : '0rem',
     top: animate ? '50%' : '0%', // Adjust the top position for centering
     left: animate ? '50%' : '0%', // Adjust the left position for centering
     transform: animate ? 'translate(-50%, -25%)' : 'translate(-50%, -50%)', // Center the element
