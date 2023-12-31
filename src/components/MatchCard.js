@@ -9,7 +9,10 @@ import staccato from '../media/staccato_logo.png';
 
 export default function MatchCard(props) {
   const {names} = useBotsContext()
-  const {reset, sortedNames, outcome, setOutcome, fightersDuo, setFightersDuo, toggleState, timerState, select_style, confirm_style, scrappy} = props;
+  const {reset, sortedNames, outcome, setOutcome, 
+    fightersDuo, setFightersDuo, toggleState, 
+    timerState, select_style, confirm_style, scrappy,
+    disWhileCountdown} = props;
 
   const [allowPlus, setAllowPlus] = useState(true);
   const [selectedFighter, setSelectedFighter] = useState({});
@@ -109,7 +112,7 @@ export default function MatchCard(props) {
                 {/* <img src={selectedFighter.title === "Staccato"? staccato :scrappy} alt="Logo"/> */}
                 <img src={scrappy} alt="Logo"/>
                 <h4>Bet: {selectedFighter.bet}</h4>
-                <button onClick={handlePlus} disabled={toggleState !== "na" || timerState !== "reset" }>Remove</button>
+                <button onClick={handlePlus} disabled={toggleState !== "na" || timerState !== "reset" || disWhileCountdown}>Remove</button>
               </div>
           )}
           </>

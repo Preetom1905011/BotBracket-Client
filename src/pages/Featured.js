@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/featured.css";
 import { CSSTransition } from "react-transition-group";
-// import { useLocation } from "react-router-dom";
 import FeaturedCard from "../components/FeaturedCard";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { RiseLoader} from "react-spinners";
@@ -10,8 +9,6 @@ import { useFeatureFetch } from "../hooks/useFeatureFetch";
 
 
 export default function Featured() {
-  // const location = useLocation();
-  // const { allPubTMs, allUsers, isFetching } = location.state;
 
   const {fetchFeaturedTMs, allPubTMs, allUsers, isFetching} = useFeatureFetch();
 
@@ -57,7 +54,7 @@ export default function Featured() {
             ))}
 
             {isFetching && <div className="feature-loader">
-                            <img src={loadScrappy}/>
+                            <img src={loadScrappy} alt='Loading'/>
                             <RiseLoader
                               color={"#00375e"}
                               loading={isFetching}

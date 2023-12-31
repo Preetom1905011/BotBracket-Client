@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/timer.css';
+import Countdown from '../components/Countdown';
 
 export default function Timer(props) {
-    const {toggleState, setToggleState, timerState, setTimerState, reset, outRed, outBlue} = props;
+    const {toggleState, setToggleState, timerState, setTimerState, 
+        reset, outRed, outBlue, isTimerStarted, setIsTimerStarted,
+        disWhileCountdown, setDisWhileCountdown} = props;
 
     const [time, setTime] = useState({minutes: "03", seconds: "00"});
     const [counter, setCounter] = useState(0);
@@ -30,10 +33,16 @@ export default function Timer(props) {
     }, [reset])
 
     const startTimer = () => {
-        if ((time.minutes > 0 || time.seconds >> 0)){
-            setTimerState("start"); 
-        }
-        setCounter(Number(time.minutes) * 60 + Number(time.seconds));
+        setIsTimerStarted(true)
+        setDisWhileCountdown(true)
+
+        setTimeout(() => {
+            if (time.minutes > 0 || time.seconds > 0) {
+                setTimerState("start");
+            }
+            setCounter(Number(time.minutes) * 60 + Number(time.seconds));
+            setDisWhileCountdown(false)
+        }, 4000);
     }
     const pauseTimer = () => {
         setTimerState("pause"); 
@@ -64,7 +73,7 @@ export default function Timer(props) {
                 onChange={handleInput}
                 onBlur={handleTime}
                 min="0"
-                disabled={toggleState === "na"? false: true}
+                disabled={disWhileCountdown? true: toggleState === "na"? false: true}
                 required/>
             <input
                 type="number"
@@ -76,21 +85,24 @@ export default function Timer(props) {
                 onBlur={handleTime}
                 max="59"
                 min="0"
-                disabled={toggleState === "na"? false: true}
+                disabled={disWhileCountdown? true: toggleState === "na"? false: true}
                 required/>
             </form>
             {(timerState === "start")? 
                     <button 
                         className='timer-bt' 
                         onClick={pauseTimer} 
-                        disabled={toggleState === "na"? false: true}>Pause</button>
+                        disabled={disWhileCountdown? true: toggleState === "na"? false: true}>Pause</button>
                     : <button 
                             className='timer-bt' 
                             onClick={startTimer}
-                            disabled={toggleState === "na" && (outRed._id !== "" && outBlue._id !== "")? false: true}>Start</button>}
+                            disabled={disWhileCountdown? true: toggleState === "na" && (outRed._id !== "" && outBlue._id !== "")? false: true}>Start</button>}
             <button 
                 className='timer-bt' 
-                onClick={resetTimer}>Reset</button>
+                onClick={resetTimer} disabled={disWhileCountdown}>Reset</button>
+            <Countdown isTimerStarted={isTimerStarted} setIsTimerStarted={setIsTimerStarted}/>
+          
+
         </div>
     )
 }

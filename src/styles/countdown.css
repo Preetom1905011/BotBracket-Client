@@ -1,0 +1,25 @@
+.Countdown {
+  position: relative;
+  background-color: red;
+}
+.Countdown button {
+  position: relative;
+  z-index: 100000;
+}
+.Countdown .number-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4rem;
+}
+.Countdown .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1000000;
+  font-weight: bold;
+  color: rgb(211, 9, 9);
+  text-shadow: 4px 4px 4px rgb(25, 23, 23);
+}/*# sourceMappingURL=countdown.css.map */
