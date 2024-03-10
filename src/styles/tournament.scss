@@ -90,7 +90,7 @@ $match-list-font: rgb(9, 89, 9);
   margin-top: 0.5rem;
   margin-right: 1rem;
   margin-left: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 .add-TM-form {
   width: 99%;
@@ -212,7 +212,7 @@ $match-list-font: rgb(9, 89, 9);
 
   margin-top: 0.5rem;
   margin-right: 1rem;
-  margin-left: 0.5rem;
+  margin-left: 0rem;
 
   display: flex;
   flex-direction: row;
@@ -285,7 +285,7 @@ $match-list-font: rgb(9, 89, 9);
   height: 95%;
   h3 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 .TM-grid {
@@ -394,6 +394,11 @@ $match-list-font: rgb(9, 89, 9);
   &:hover {
     color: $bot2-color;
   }
+}
+
+.TM-matches-count {
+  margin-top: 0rem;
+  margin-left: 3rem;
 }
 
 .TM-leader-list {

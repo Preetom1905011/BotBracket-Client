@@ -67,6 +67,11 @@ const BotList = ({
 
   return (
     <div className="TM-scroll-box">
+      {selectedTourney._id !== "Default" &&
+        <div className="count-box">
+          Total Bots: {sortedNames.length}
+        </div>
+      }
       {sortedNames.map((name) =>
         selectedBot && selectedBot._id === name._id ? (
           <li

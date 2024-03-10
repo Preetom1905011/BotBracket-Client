@@ -306,8 +306,22 @@ export default function TMScene({
       {!showTMForm ? (
         <div className="TM-details">
           <div className="TM-grid">
-            <h3>Leaderboard</h3>
-            <h3>Match History</h3>
+            <div>
+              <h3>Leaderboard</h3>
+              {selectedTourney._id !== "Default" &&
+                <div className="count-box matches-count">
+                  Total Bots: {sortedNames.length}
+                </div>
+              }
+            </div>
+            <div>
+              <h3>Match History</h3>
+              {selectedTourney._id !== "Default" &&
+                <div className="count-box TM-matches-count">
+                  Total Matches: {matches.length}
+                </div>
+              } 
+            </div>
           </div>
           <div className="TM-grid scroll">
             <div className="TM-leaderboard" style={{backgroundColor: bgColor}}>

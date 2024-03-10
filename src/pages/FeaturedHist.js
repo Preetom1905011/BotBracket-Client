@@ -29,6 +29,9 @@ export default function FeaturedHist() {
               <h1>{sortedNames?.[0]?.title}</h1>
             </div>
             <h2>Leaderboard</h2>
+            <div className="count-box">
+              Total Bots: {sortedNames.length}
+            </div>
             <div className="scroll-box scroll-box-featured">
               {sortedNames?.map((name) => (
                 <li className="TM-leader-list container" key={name._id}>
@@ -52,6 +55,9 @@ export default function FeaturedHist() {
             </div>
             <div className="scroll-featured">
               <h2>Match History</h2>
+              <div className="count-box matches-count">
+                Total Matches: {matches.length}
+              </div>
               <div className="scroll">
                 {matches?.map((match) => (
                   <li className="match-hist-list" key={match._id}>
